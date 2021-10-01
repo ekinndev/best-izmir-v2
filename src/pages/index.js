@@ -1,8 +1,14 @@
-import { useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useRouter } from 'next/dist/client/router';
 import styles from './Home.module.scss';
 
 export default function Home() {
+  const router = useRouter();
+  const { t } = useTranslation('common');
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +21,10 @@ export default function Home() {
           Welcome to
           <a href="https://nextjs.org"> Next.js!!!!!!!</a>
         </h1>
+        <h2 className={styles.title}>{t('h1')}</h2>
+        <Link href="/" locale={router.locale === 'en' ? 'tr' : 'en'}>
+          <button type="button">test</button>
+        </Link>
 
         <p className={styles.description}>
           Get started by editing
@@ -60,3 +70,9 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async ({ locale }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['common'])),
+  },
+});
