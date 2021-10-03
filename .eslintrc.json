@@ -24,7 +24,13 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "printWidth": 120,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "semi": true,
+        "trailingComma": "all",
+        "arrowParens": "avoid"
       }
     ],
     "no-unused-vars": "warn",
