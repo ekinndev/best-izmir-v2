@@ -32,7 +32,9 @@ const Layout = ({ children }) => {
                 <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>
                   {menuItem.subMenuComponents.map(item => (
                     <Menu.Item key={item.id} icon={item.icon}>
-                      <Link href={menuItem.route + item.route}>{t(item.languageKey)}</Link>
+                      <Link href={menuItem.route + item.route}>
+                        <a>{t(item.languageKey)}</a>
+                      </Link>
                     </Menu.Item>
                   ))}
                 </SubMenu>
@@ -40,7 +42,9 @@ const Layout = ({ children }) => {
             }
             return (
               <Menu.Item key={menuItem.id} icon={menuItem.icon}>
-                <Link href={menuItem.route}>{t(menuItem.languageKey)}</Link>
+                <Link href={menuItem.route}>
+                  <a>{t(menuItem.languageKey)}</a>
+                </Link>
               </Menu.Item>
             );
           })}
