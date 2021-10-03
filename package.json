@@ -11,6 +11,7 @@
     "svgr": "npx @svgr/cli -d src/components/icons --ignore-existing --icon public/icons"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.7.0",
     "@next-auth/firebase-adapter": "^0.1.2-pr.183-76202b42.8",
     "@reduxjs/toolkit": "^1.6.1",
     "antd": "^4.16.13",
@@ -18,6 +19,7 @@
     "next": "^11.1.2",
     "next-auth": "^4.0.0-beta.2",
     "next-i18next": "^8.8.0",
+    "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
