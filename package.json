@@ -8,6 +8,7 @@
     "start": "next start",
     "prepare": "husky install",
     "format": "pretty-quick --staged",
+    "lint": "eslint . --fix",
     "svgr": "npx @svgr/cli -d src/components/icons --ignore-existing --icon public/icons"
   },
   "dependencies": {
