@@ -5,17 +5,24 @@ import { Layout as ALayout, Menu } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import { useSelector, useDispatch } from 'react-redux';
 import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
+import { toggleTheme } from '../../store/slices/common';
 
 const Layout = ({ children }) => {
   const router = useRouter();
   const selectedKeys = router.pathname.split('/').map(item => `/${item}`);
   const { Header, Footer, Content, Sider } = ALayout;
   const { SubMenu } = Menu;
+  const theme = useSelector(state => state.common.theme);
+  const dispatch = useDispatch();
 
   const { t } = useTranslation('menu');
+  const toggleThemeHandler = () => {
+    dispatch(toggleTheme());
+  };
 
   return (
     <ALayout>
@@ -24,9 +31,16 @@ const Layout = ({ children }) => {
         <div className={LogoStyles.logo}>
           <Logo width={225} height={125} isDark={theme === 'dark'} />
         </div>
+            <Switch
+              size="default"
+              defaultChecked={theme === 'dark'}
+              onChange={toggleThemeHandler}
+              unCheckedChildren={<BsSun />}
+              checkedChildren={<BsMoon />}
+            />
 
         <Menu
-          theme="dark"
+          theme={theme}
           defaultSelectedKeys={['1']}
           mode="inline"
           selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
