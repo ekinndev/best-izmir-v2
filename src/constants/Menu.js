@@ -1,12 +1,5 @@
 /* eslint-disable object-curly-newline */
-import {
-  CalendarOutlined,
-  HomeOutlined,
-  InfoCircleOutlined,
-  PhoneOutlined,
-  PictureOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+import { FcCalendar, FcHome, FcInfo, FcPhone, FcPicture, FcBusinessman } from 'react-icons/fc';
 
 const MENU_CONSTANT = [
   {
@@ -15,7 +8,7 @@ const MENU_CONSTANT = [
     languageKey: 'Home',
     subMenuComponents: [],
 
-    icon: <HomeOutlined />,
+    icon: <FcHome />,
     route: '/',
   },
   {
@@ -25,7 +18,7 @@ const MENU_CONSTANT = [
     subMenuComponents: [],
 
     route: '/about-us',
-    icon: <InfoCircleOutlined />,
+    icon: <FcInfo />,
   },
   {
     id: '/events',
@@ -80,7 +73,7 @@ const MENU_CONSTANT = [
     ],
 
     route: '/events',
-    icon: <CalendarOutlined />,
+    icon: <FcCalendar />,
   },
   {
     id: '/gallery',
@@ -89,7 +82,7 @@ const MENU_CONSTANT = [
     route: '/gallery',
     subMenuComponents: [],
 
-    icon: <PictureOutlined />,
+    icon: <FcPicture />,
   },
   {
     id: '/contact',
@@ -98,7 +91,7 @@ const MENU_CONSTANT = [
     route: '/contact',
     subMenuComponents: [],
 
-    icon: <PhoneOutlined />,
+    icon: <FcPhone />,
   },
   {
     id: '/profile',
@@ -107,7 +100,7 @@ const MENU_CONSTANT = [
     route: '/profile',
     subMenuComponents: [],
 
-    icon: <UserOutlined />,
+    icon: <FcBusinessman />,
   },
 ];
 
