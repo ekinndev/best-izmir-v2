@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import MENU_CONSTANT from '../../constants/Menu';
+import LogoStyles from '../Logo/Logo.module.scss';
+import Logo from '../Logo/Logo';
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -19,6 +21,9 @@ const Layout = ({ children }) => {
     <ALayout>
       <Sider>
         {/* <div className="logo" /> */}
+        <div className={LogoStyles.logo}>
+          <Logo width={225} height={125} isDark={theme === 'dark'} />
+        </div>
 
         <Menu
           theme="dark"
