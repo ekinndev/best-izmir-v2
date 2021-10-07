@@ -41,7 +41,7 @@
     "react/jsx-props-no-spreading": "off",
     "arrow-parens": "off",
     "object-curly-newline": "off",
-    "max-len": ["error", { "code": 120, "tabWidth": 2 }]
+    "max-len": ["warn", { "code": 120, "tabWidth": 2 }]
   },
   "settings": {
     "react": {
