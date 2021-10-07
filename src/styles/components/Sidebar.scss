@@ -1,0 +1,14 @@
+.sidebar {
+  min-height: 100vh;
+
+  &:not(.ant-layout-sider-collapsed) {
+    flex: 0 0 240px !important;
+    max-width: 240px !important;
+    min-width: 240px !important;
+    width: 240px !important;
+
+    & ~ .main-layout {
+      display: none;
+    }
+  }
+}
