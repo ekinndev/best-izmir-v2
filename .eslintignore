@@ -4,3 +4,4 @@ __generated__
 stories
 .next
 .husky
+next.config.js
