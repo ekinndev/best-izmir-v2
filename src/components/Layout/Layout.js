@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsSun, BsMoon } from 'react-icons/bs';
+import Footer from './Footer/Footer';
 import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
@@ -15,7 +16,7 @@ import { toggleTheme } from '../../store/slices/common';
 const Layout = ({ children }) => {
   const router = useRouter();
   const selectedKeys = router.pathname.split('/').map(item => `/${item}`);
-  const { Header, Footer, Content, Sider } = ALayout;
+  const { Content, Sider } = ALayout;
   const { SubMenu } = Menu;
   const theme = useSelector(state => state.common.theme);
   const dispatch = useDispatch();
@@ -111,7 +112,7 @@ const Layout = ({ children }) => {
       <ALayout className="main-layout">
         {/* <Header /> */}
         <Content>{children}</Content>
-        <Footer>Footer</Footer>
+        <Footer />
       </ALayout>
     </ALayout>
   );
