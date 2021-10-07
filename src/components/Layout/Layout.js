@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Layout as ALayout, Menu, Switch, Row, Col } from 'antd';
 import Link from 'next/link';
@@ -8,7 +8,6 @@ import { useTranslation } from 'next-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsSun, BsMoon } from 'react-icons/bs';
 import MENU_CONSTANT from '../../constants/Menu';
-import SidebarStyles from './Sidebar.module.scss';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
 import { toggleTheme } from '../../store/slices/common';
@@ -20,28 +19,43 @@ const Layout = ({ children }) => {
   const { SubMenu } = Menu;
   const theme = useSelector(state => state.common.theme);
   const dispatch = useDispatch();
+  const [collapsed, setCollapsed] = useState(true);
 
   const { t, i18n } = useTranslation('menu');
 
   const toggleLanguage = () => {
-    if (i18n.language === 'en') {
-      i18n.changeLanguage('tr');
-    } else {
-      i18n.changeLanguage('en');
-    }
+    setTimeout(() => {
+      router.replace(router.pathname, null, { locale: router.locale === 'tr' ? 'en' : 'tr' });
+    }, 200);
   };
 
   const toggleThemeHandler = () => {
     dispatch(toggleTheme());
   };
 
+  const onCollapse = val => {
+    setCollapsed(val);
+  };
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setCollapsed(true);
+    };
+
+    router.events.on('routeChangeStart', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <ALayout>
-      <Sider className={SidebarStyles.sidebar} theme={theme}>
+      <Sider className="sidebar" theme={theme} collapsed={collapsed} onCollapse={onCollapse} collapsible>
         <div className={LogoStyles.logo}>
-          <Logo width={225} height={125} isDark={theme === 'dark'} />
+          {!collapsed && <Logo width={225} height={125} isDark={theme === 'dark'} />}
         </div>
-        <Row justify="space-between">
+        <Row justify="center">
           <Col>
             <Switch
               size="default"
@@ -49,15 +63,6 @@ const Layout = ({ children }) => {
               onChange={toggleLanguage}
               unCheckedChildren="TR"
               checkedChildren="EN"
-            />
-          </Col>
-          <Col>
-            <Switch
-              size="default"
-              defaultChecked={theme === 'dark'}
-              onChange={toggleThemeHandler}
-              unCheckedChildren={<BsSun />}
-              checkedChildren={<BsMoon />}
             />
           </Col>
         </Row>
@@ -91,8 +96,19 @@ const Layout = ({ children }) => {
             );
           })}
         </Menu>
+        <Row justify="center">
+          <Col>
+            <Switch
+              size="default"
+              defaultChecked={theme === 'dark'}
+              onChange={toggleThemeHandler}
+              unCheckedChildren={<BsSun />}
+              checkedChildren={<BsMoon />}
+            />
+          </Col>
+        </Row>
       </Sider>
-      <ALayout>
+      <ALayout className="main-layout">
         {/* <Header /> */}
         <Content>{children}</Content>
         <Footer>Footer</Footer>
