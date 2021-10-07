@@ -1,0 +1,16 @@
+.footer-menu {
+  background: #fff !important;
+  margin-left: -1rem;
+  &.dark {
+    background: rgb(0, 21, 41) !important;
+  }
+  display: flex !important;
+  flex-direction: column !important;
+  max-height: 300px !important;
+  flex-wrap: wrap !important;
+
+  .fmenu {
+    list-style: none;
+    padding: 0;
+  }
+}

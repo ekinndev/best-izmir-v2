@@ -40,7 +40,8 @@
     "react/prop-types": "off",
     "react/jsx-props-no-spreading": "off",
     "arrow-parens": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "max-len": ["warn", { "code": 120, "tabWidth": 2 }]
   },
   "settings": {
     "react": {
