@@ -1,3 +1,19 @@
 {
-  "h1": "This is a test"
+  "h1": "This is a test",
+  "eventsSectionTitleHome": "Our Events",
+  "partnersSectionTitleHome": "Our Partners",
+  "events": {
+    "ebecTitle": "EBEC",
+    "ebecContent": "",
+    "mwIzmirTitle": "Mw Izmir",
+    "mwIzmirContent": "",
+    "yfsTitle": "YFS",
+    "yfsContent": "",
+    "beinciTitle": "beInci",
+    "beinciContent": "",
+    "courseTitle": "BEST Course in Autumn",
+    "courseContent": "",
+    "otherTitle": "BEST Other in Autumn",
+    "otherContent": "BESTothere in Autumn"
+  }
 }
