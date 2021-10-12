@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/dist/client/router';
+import { useRouter } from 'next/router';
 import { Card, Col, Layout as ALayout, Row } from 'antd';
 import Hero from '../components/Hero/Hero';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
