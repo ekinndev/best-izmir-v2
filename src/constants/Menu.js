@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import { FcCalendar, FcHome, FcInfo, FcPhone, FcPicture, FcBusinessman } from 'react-icons/fc';
+import { FcCalendar, FcHome, FcInfo, FcPhone, FcPicture, FcBusinessman, FcSafe } from 'react-icons/fc';
 
 const MENU_CONSTANT = [
   {
@@ -101,6 +101,15 @@ const MENU_CONSTANT = [
     subMenuComponents: [],
 
     icon: <FcBusinessman />,
+  },
+  {
+    id: '/login',
+    languageKey: 'Login',
+    subMenu: false,
+    route: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/signin`,
+    subMenuComponents: [],
+
+    icon: <FcSafe />,
   },
 ];
 

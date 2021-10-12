@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsSun, BsMoon } from 'react-icons/bs';
+import { useSession } from 'next-auth/client';
 import Footer from './Footer/Footer';
 import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
@@ -15,6 +16,7 @@ import { toggleTheme } from '../../store/slices/common';
 
 const Layout = ({ children }) => {
   const router = useRouter();
+  const [session] = useSession();
   const selectedKeys = router.pathname.split('/').map(item => `/${item}`);
   const { Content, Sider } = ALayout;
   const { SubMenu } = Menu;
@@ -75,6 +77,8 @@ const Layout = ({ children }) => {
           selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
         >
           {MENU_CONSTANT.map(menuItem => {
+            if (menuItem.id === '/login' && (session || session === undefined)) return null;
+            if (menuItem.id === '/profile' && !session) return null;
             if (menuItem.subMenu) {
               return (
                 <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>
