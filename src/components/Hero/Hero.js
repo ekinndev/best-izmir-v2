@@ -10,7 +10,7 @@ const Hero = ({ titleId, contentId, image, link, buttonTextId }) => {
     <div
       className={styles.hero}
       style={{
-        backgroundImage: `url("https://via.placeholder.com/1400x500")`,
+        backgroundImage: `url(${image})`,
       }}
     >
       <div className={styles.backdrop} />

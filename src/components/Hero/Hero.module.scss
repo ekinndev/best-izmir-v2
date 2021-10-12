@@ -4,6 +4,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  padding: 1rem;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -26,9 +27,16 @@
 
   .hero_title {
     font-size: 5rem;
+
+    @media screen and (max-width: 600px) {
+      font-size: 3rem;
+    }
   }
   .hero_content {
     font-size: 2rem;
+    @media screen and (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 }
 
