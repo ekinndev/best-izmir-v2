@@ -94,9 +94,13 @@ const Layout = ({ children }) => {
             }
             return (
               <Menu.Item key={menuItem.id} icon={menuItem.icon}>
-                <Link href={menuItem.route}>
-                  <a>{t(menuItem.languageKey)}</a>
-                </Link>
+                {menuItem.isExternal ? (
+                  <a href={menuItem.route}>{t(menuItem.languageKey)}</a>
+                ) : (
+                  <Link href={menuItem.route}>
+                    <a>{t(menuItem.languageKey)}</a>
+                  </Link>
+                )}
               </Menu.Item>
             );
           })}
