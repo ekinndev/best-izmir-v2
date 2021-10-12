@@ -1,3 +1,19 @@
 {
-  "h1": "Bu bir test"
+  "h1": "Bu bir test",
+  "eventsSectionTitleHome": "Etkinliklerimiz",
+  "partnersSectionTitleHome": "Partnerlerimiz",
+  "events": {
+    "ebecTitle": "EBEC",
+    "ebecContent": "",
+    "mwIzmirTitle": "Mw İzmir",
+    "mwIzmirContent": "",
+    "yfsTitle": "YFS",
+    "yfsContent": "",
+    "beinciTitle": "beİnci",
+    "beinciContent": "",
+    "courseTitle": "Sonbahar BEST Kursu",
+    "courseContent": "",
+    "otherTitle": "BEST Other in Autumn",
+    "otherContent": "BESTothere in Autumn"
+  }
 }

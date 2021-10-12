@@ -1,0 +1,55 @@
+.hero {
+  position: relative;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.7);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  color: #fff;
+  gap: 1rem;
+
+  .hero_title {
+    font-size: 5rem;
+
+    @media screen and (max-width: 600px) {
+      font-size: 3rem;
+    }
+  }
+  .hero_content {
+    font-size: 2rem;
+    @media screen and (max-width: 600px) {
+      font-size: 1rem;
+    }
+  }
+}
+
+.hero_button {
+  padding: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: orange;
+  text-align: center;
+  border-radius: 8px;
+  width: 200px;
+
+  &:hover {
+    color: #fff;
+  }
+}
