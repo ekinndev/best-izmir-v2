@@ -2,9 +2,9 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { Card, Col, Layout as ALayout, Row } from 'antd';
+import Image from 'next/image';
 import Hero from '../components/Hero/Hero';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
-import Image from 'next/image';
 import NextLink from '../components/NextLink/NextLink';
 import { homePageEvents, homePagePartners } from '../constants/Home';
 
