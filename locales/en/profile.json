@@ -1,0 +1,6 @@
+{
+  "findMeetingError": "Can't Find Meeting!",
+  "duplicateAttentMeeting": "You Attent this Meeting Before !",
+  "successAttentMeeting": "You Attent This Meeting Successfully!",
+  "unexpectedError": "Unexpected error occured!"
+}

@@ -1,0 +1,9 @@
+{
+  "meetingNameErrorMessage": "Please enter a meeting name",
+  "meetingNameLabel": "Meeting Name",
+  "meetingButtonText": "Create Meeting",
+  "meetingButtonLoadingText": "Please Wait",
+  "meetingSuccessMessage": "Meeting Created Succesfully!",
+  "duplicateMeetingErrorMessage": "This meeting name is already taken!",
+  "unexpectedErrorMessage": "An Error Occured!"
+}
