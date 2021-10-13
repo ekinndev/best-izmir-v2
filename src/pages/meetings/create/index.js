@@ -41,7 +41,7 @@ const CreateMeeting = () => {
 
   return (
     <div className={styles.meeting_create}>
-      {showQr && <QrCode value={meetingKey} size={500} />}
+      {showQr && <QrCode value={meetingKey} size={210} />}
       <Form name="meeting" onFinish={onSubmit}>
         <Form.Item
           label={t('meetingNameLabel')}
