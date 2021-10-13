@@ -6,6 +6,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Table, Input, Button, Space } from 'antd';
 import styles from './styles.module.scss';
 import firestore from '../../utils/db';
+import NextLink from '../../components/NextLink/NextLink';
 
 const Meetings = props => {
   const [data, setData] = useState(null);
@@ -69,6 +70,7 @@ const Meetings = props => {
       key: 'id',
       width: '10%',
       ...getColumnSearchProps('id'),
+      render: text => <NextLink href={`/meetings/${text}`}>{text}</NextLink>,
     },
     {
       title: 'Created Email',
