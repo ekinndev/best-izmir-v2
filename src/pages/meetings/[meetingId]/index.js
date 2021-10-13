@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/client';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Table, Input, Button, Space } from 'antd';
+import { CSVLink } from 'react-csv';
 import firestore from '../../../utils/db';
 import styles from './styles.module.scss';
 
-const Meetings = props => {
+const Meetings = () => {
   const router = useRouter();
   const { meetingId } = router.query;
   const [data, setData] = useState(null);
+  const [csvData, setCsvData] = useState(null);
 
   const handleSearch = (selectedKeys, confirm) => {
     confirm();
@@ -98,6 +99,9 @@ const Meetings = props => {
         tableData.push({ key: doc.id, id: doc.id, ...doc.data() });
       });
       setData(tableData);
+      const tableCsvData = tableData.map(userData => ({ id: userData.id, email: userData.email, name: userData.name }));
+
+      setCsvData(tableCsvData);
     };
 
     initFunc();
@@ -106,6 +110,11 @@ const Meetings = props => {
   return (
     <div className={styles.meetings}>
       <div style={{ overflowX: 'auto', width: '100%' }}>
+        {csvData && (
+          <CSVLink filename={`${meetingId}.csv`} data={csvData}>
+            EXCEL
+          </CSVLink>
+        )}
         <Table columns={columns} dataSource={data} />
       </div>
     </div>
