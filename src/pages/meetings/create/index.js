@@ -19,6 +19,8 @@ const CreateMeeting = () => {
     try {
       const getMeetingData = await firestore.collection('meetings').doc(values.meeting_name).get();
       if (getMeetingData.exists) {
+        setMeetingKey(values.meeting_name);
+        setShowQr(true);
         return message.error(`${t('duplicateMeetingErrorMessage')} ${values.meeting_name}`);
       }
       await firestore.collection('meetings').doc(values.meeting_name).set({
