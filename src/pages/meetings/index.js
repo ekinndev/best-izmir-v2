@@ -113,7 +113,7 @@ Meetings.propTypes = {};
 
 export const getServerSideProps = async ({ locale, ...ctx }) => {
   const session = await getSession(ctx);
-  if (!session) {
+  if (!session && !session.user.isAdmin) {
     return {
       redirect: {
         destination: '/',
