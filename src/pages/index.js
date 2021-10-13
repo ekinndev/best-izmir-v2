@@ -16,7 +16,12 @@ export default function Home({ instagramFeedData }) {
 
   return (
     <ALayout>
-      <Hero contentId="heroContentHome" titleId="heroTitleHome" buttonTextId="heroActionButtonTextHome" />
+      <Hero
+        contentId="heroContentHome"
+        titleId="heroTitleHome"
+        buttonTextId="heroActionButtonTextHome"
+        image="https://via.placeholder.com/1430x500"
+      />
       <section className="events">
         <SectionTitle titleId="eventsSectionTitleHome" type="h2" />
         <Row gutter={[16, 24]}>
