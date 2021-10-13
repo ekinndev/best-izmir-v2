@@ -55,7 +55,7 @@ export default function Home({ instagramFeedData }) {
                   <Card
                     bordered
                     style={{ minHeight: '525px' }}
-                    cover={<Image src={post.media_url} width={1080} height={608} />}
+                    cover={<img src={post.media_url} width={1080} height={262} alt={post.caption.slice(0, 20)} />}
                   >
                     <Meta
                       avatar={
