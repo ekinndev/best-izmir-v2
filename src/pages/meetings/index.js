@@ -104,7 +104,9 @@ const Meetings = props => {
 
   return (
     <div className={styles.meetings}>
-      <Table columns={columns} dataSource={data} style={{ width: '100%' }} />
+      <div style={{ overflowX: 'auto', width: '100%' }}>
+        <Table columns={columns} dataSource={data} />
+      </div>
     </div>
   );
 };
