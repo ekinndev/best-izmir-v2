@@ -1,35 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Layout } from 'antd';
+import { Col, Layout, Row } from 'antd';
+import { FiGithub, FiFacebook, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 const Footer = props => {
   const AFooter = Layout.Footer;
 
   return (
     <AFooter className="footer-menu">
-      <div className="fmenu-wrap">
-        <h3 className="ftitle">asas</h3>
-        <ul className="fmenu">
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-        </ul>
-      </div>
-
-      <div className="fmenu-wrap">
-        <h3 className="ftitle">asas</h3>
-        <ul className="fmenu">
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-          <li className="fmenu-item">asas</li>
-        </ul>
-      </div>
+      <Row justify="space-between">
+        <Col span={12}>
+          <div className="social_media">
+            <a href="https://github.com/BEST-Izmir" target="_blank" rel="noopener noreferrer">
+              <FiGithub size="2rem" />
+            </a>
+            <a href="https://www.linkedin.com/company/bestizmir/" target="_blank" rel="noopener noreferrer">
+              <FiLinkedin size="2rem" />
+            </a>
+            <a href="https://www.instagram.com/best.izmir/" target="_blank" rel="noopener noreferrer">
+              <FiInstagram size="2rem" />
+            </a>
+            <a href="https://www.facebook.com/BEST.IZMIR" target="_blank" rel="noopener noreferrer">
+              <FiFacebook size="2rem" />
+            </a>
+          </div>
+        </Col>
+        <Col span={12}>
+          <div className="copyright_text">Copyright 2020. BEST Izmir</div>
+        </Col>
+      </Row>
     </AFooter>
   );
 };
