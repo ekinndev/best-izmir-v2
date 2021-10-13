@@ -1,0 +1,9 @@
+{
+  "meetingNameErrorMessage": "Lütfen bir toplantı adı girin.",
+  "meetingNameLabel": "Toplantı Adı",
+  "meetingButtonText": "Toplantı Oluştur",
+  "meetingButtonLoadingText": "Lütfen Bekleyin",
+  "meetingSuccessMessage": "Toplantı Başarılı Bir Şekilde Oluşturuldu!",
+  "duplicateMeetingErrorMessage": "Bu toplantı ismi daha önce kullanılmış!",
+  "unexpectedErrorMessage": "Beklenmeyen bir hata oluştu!"
+}
