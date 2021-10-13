@@ -9,7 +9,7 @@ const Footer = props => {
   return (
     <AFooter className="footer-menu">
       <Row justify="space-between">
-        <Col span={12}>
+        <Col sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="social_media">
             <a href="https://github.com/BEST-Izmir" target="_blank" rel="noopener noreferrer">
               <FiGithub size="2rem" />
@@ -25,7 +25,7 @@ const Footer = props => {
             </a>
           </div>
         </Col>
-        <Col span={12}>
+        <Col sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="copyright_text">Copyright 2020. BEST Izmir</div>
         </Col>
       </Row>
