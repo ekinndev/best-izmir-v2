@@ -77,8 +77,9 @@ const Layout = ({ children }) => {
           selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
         >
           {MENU_CONSTANT.map(menuItem => {
-            if (menuItem.id === '/login' && (session || session === undefined)) return null;
-            if (menuItem.id === '/profile' && !session) return null;
+            if (menuItem.id === '/login' && session) return null;
+            if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
+            if (menuItem.protected && !session) return null;
             if (menuItem.subMenu) {
               return (
                 <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>

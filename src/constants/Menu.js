@@ -1,5 +1,5 @@
 /* eslint-disable object-curly-newline */
-import { FcCalendar, FcHome, FcInfo, FcPhone, FcPicture, FcBusinessman, FcSafe } from 'react-icons/fc';
+import { FcCalendar, FcHome, FcInfo, FcPhone, FcPicture, FcBusinessman, FcSafe, FcHighPriority } from 'react-icons/fc';
 
 const MENU_CONSTANT = [
   {
@@ -98,9 +98,39 @@ const MENU_CONSTANT = [
     languageKey: 'Profil',
     subMenu: false,
     route: '/profile',
+    protected: true,
     subMenuComponents: [],
 
     icon: <FcBusinessman />,
+  },
+  {
+    id: '/admin',
+    languageKey: 'admin',
+    subMenu: true,
+    isAdmin: true,
+    protected: true,
+    route: '/',
+    subMenuComponents: [
+      {
+        id: '/meetings',
+        languageKey: 'meetings',
+        subMenu: false,
+        route: '/meetings',
+        subMenuComponents: [],
+
+        icon: null,
+      },
+      {
+        id: '/meetings/create',
+        languageKey: 'createMeetings',
+        subMenu: false,
+        route: '/meetings/create',
+        subMenuComponents: [],
+        icon: null,
+      },
+    ],
+
+    icon: <FcHighPriority />,
   },
   {
     id: '/login',
