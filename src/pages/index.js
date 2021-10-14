@@ -60,7 +60,16 @@ export default function Home({ instagramFeedData }) {
                   <Card
                     bordered
                     style={{ minHeight: '525px' }}
-                    cover={<img src={post.media_url} width={1080} height={262} alt={post.caption.slice(0, 20)} />}
+                    cover={
+                      // eslint-disable-next-line react/jsx-wrap-multilines
+                      <img
+                        src={post.media_url}
+                        width={1080}
+                        height={262}
+                        alt={post.caption.slice(0, 20)}
+                        loading="lazy"
+                      />
+                    }
                   >
                     <Meta
                       avatar={
