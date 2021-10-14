@@ -7,7 +7,7 @@ const Gallery = props => <div>Gallery</div>;
 Gallery.propTypes = {};
 
 export const getServerSideProps = async ({ locale }) => ({
-  props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
 });
 
 export default Gallery;

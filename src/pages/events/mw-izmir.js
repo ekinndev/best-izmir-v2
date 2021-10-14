@@ -7,7 +7,7 @@ const MWIzmir = props => <div>MWIzmir</div>;
 MWIzmir.propTypes = {};
 
 export const getServerSideProps = async ({ locale }) => ({
-  props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
 });
 
 export default MWIzmir;

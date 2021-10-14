@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import Head from 'next/head';
 import { Layout as ALayout, Menu, Switch, Row, Col } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -13,6 +13,7 @@ import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
 import { toggleTheme } from '../../store/slices/common';
+import staticPages from '../../constants/Pages';
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(true);
 
   const { t, i18n } = useTranslation('menu');
+  const pagesTranslation = useTranslation('pages');
 
   const toggleLanguage = () => {
     setTimeout(() => {
@@ -52,8 +54,13 @@ const Layout = ({ children }) => {
     };
   }, [router.events]);
 
+  const pageInfo = staticPages.find(info => info.page === router.pathname);
+
   return (
     <ALayout>
+      <Head>
+        <title>{`${pagesTranslation.t(pageInfo?.titleKey)} | ${pagesTranslation.t('bestIzmir')}`}</title>
+      </Head>
       <Sider className="sidebar" theme={theme} collapsed={collapsed} onCollapse={onCollapse} collapsible>
         <div className={LogoStyles.logo}>
           {!collapsed && <Logo width={225} height={125} isDark={theme === 'dark'} />}
@@ -65,6 +72,7 @@ const Layout = ({ children }) => {
               defaultChecked={i18n.language === 'en'}
               onChange={toggleLanguage}
               unCheckedChildren="TR"
+              disabled={session}
               checkedChildren="EN"
             />
           </Col>

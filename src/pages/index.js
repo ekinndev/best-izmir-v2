@@ -89,7 +89,7 @@ export const getServerSideProps = async ({ locale }) => {
 
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'menu', 'hero'])),
+      ...(await serverSideTranslations(locale, ['common', 'menu', 'hero', 'pages'])),
       instagramFeedData: instagramFeed.data || null,
     },
   };

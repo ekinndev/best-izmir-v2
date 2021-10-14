@@ -134,7 +134,7 @@ export const getServerSideProps = async ({ locale, ...ctx }) => {
     };
   }
   return {
-    props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+    props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
   };
 };
 export default Meetings;
