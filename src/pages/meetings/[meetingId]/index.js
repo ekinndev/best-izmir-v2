@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/client';
+import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Table, Input, Button, Space } from 'antd';
 import { CSVLink } from 'react-csv';
+import { useTranslation } from 'next-i18next';
 import firestore from '../../../utils/db';
 import styles from './styles.module.scss';
 
@@ -13,6 +15,7 @@ const Meetings = () => {
   const { meetingId } = router.query;
   const [data, setData] = useState(null);
   const [csvData, setCsvData] = useState(null);
+  const { t } = useTranslation('pages');
 
   const handleSearch = (selectedKeys, confirm) => {
     confirm();
@@ -109,6 +112,9 @@ const Meetings = () => {
 
   return (
     <div className={styles.meetings}>
+      <Head>
+        <title>{`${t('meetingIdPageTitle')} ${meetingId} | ${t('bestIzmir')}`}</title>
+      </Head>
       <div style={{ overflowX: 'auto', width: '100%' }}>
         {csvData && (
           <CSVLink filename={`${meetingId}.csv`} data={csvData}>
@@ -134,7 +140,7 @@ export const getServerSideProps = async ({ locale, ...ctx }) => {
     };
   }
   return {
-    props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+    props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
   };
 };
 export default Meetings;

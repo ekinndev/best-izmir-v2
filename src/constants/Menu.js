@@ -109,13 +109,13 @@ const MENU_CONSTANT = [
     subMenu: true,
     isAdmin: true,
     protected: true,
-    route: '/',
+    route: '/meetings',
     subMenuComponents: [
       {
         id: '/meetings',
         languageKey: 'meetings',
         subMenu: false,
-        route: '/meetings',
+        route: '/',
         subMenuComponents: [],
 
         icon: null,
@@ -124,7 +124,7 @@ const MENU_CONSTANT = [
         id: '/meetings/create',
         languageKey: 'createMeetings',
         subMenu: false,
-        route: '/meetings/create',
+        route: '/create',
         subMenuComponents: [],
         icon: null,
       },

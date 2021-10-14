@@ -7,7 +7,7 @@ const AboutUs = props => <div>About Us</div>;
 AboutUs.propTypes = {};
 
 export const getServerSideProps = async ({ locale }) => ({
-  props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
 });
 
 export default AboutUs;

@@ -26,7 +26,7 @@ const Footer = props => {
           </div>
         </Col>
         <Col sm={{ span: 24 }} md={{ span: 12 }}>
-          <div className="copyright_text">Copyright 2020. BEST Izmir</div>
+          <div className="copyright_text">COPYRIGHT© 2021. BEST Izmir</div>
         </Col>
       </Row>
     </AFooter>

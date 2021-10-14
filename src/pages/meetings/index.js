@@ -73,7 +73,7 @@ const Meetings = props => {
       render: text => <NextLink href={`/meetings/${text}`}>{text}</NextLink>,
     },
     {
-      title: 'Created Email',
+      title: "Creator's Email",
       dataIndex: 'createdByEmail',
       key: 'createdEmail',
       width: '50%',
@@ -82,7 +82,7 @@ const Meetings = props => {
       sortDirections: ['descend', 'ascend'],
     },
     {
-      title: 'Created Name',
+      title: "Creator's Name",
       dataIndex: 'createdByName',
       key: 'createdByName',
       ...getColumnSearchProps('createdByName'),
@@ -124,7 +124,7 @@ export const getServerSideProps = async ({ locale, ...ctx }) => {
     };
   }
   return {
-    props: { ...(await serverSideTranslations(locale, ['common', 'menu'])) },
+    props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
   };
 };
 
