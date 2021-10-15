@@ -1,7 +1,9 @@
 {
   "heroTitleHome": "BEST Izmir",
   "heroContentHome": "Let's Join the most beaturiful school community",
-  "heroActionButtonTextHome": "Join Us"
+  "heroActionButtonTextHome": "Join Us",
+  "heroContentAboutUs": "About BEST Izmir",
+  "heroTitleAboutUs": "About Us",
   "heroTitleContactUs": "Contact BEST Izmir",
   "heroContentContactUs": "You can just to fill the form below to contact us"
 }

@@ -1,7 +1,9 @@
 {
   "heroTitleHome": "BEST İzmir",
   "heroContentHome": "En güzel okul topluluğuna şimdi katılın",
-  "heroActionButtonTextHome": "Bize Katıl"
+  "heroActionButtonTextHome": "Bize Katıl",
+  "heroContentAboutUs": "BEST İzmir Hakkında",
+  "heroTitleAboutUs": "Hakkımızda",
   "heroTitleContactUs": "İletişim BEST İzmir",
   "heroContentContactUs": "Bizimle iletişime geçmek için aşağıdaki formu doldurmanız yeterli"
 }
