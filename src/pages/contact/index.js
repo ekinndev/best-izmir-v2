@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { Col, Layout as ALayout, Row, Form, Input, Button } from 'antd';
+import { Col, Layout as ALayout, Row, Form, Input, Button, message } from 'antd';
 import { useTranslation } from 'next-i18next';
+import axios from 'axios';
 import Hero from '../../components/Hero/Hero';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 
 const Contact = props => {
   const { t } = useTranslation('formSettings');
+  const [loading, setLoading] = useState(false);
 
   const layout = {
     labelCol: {
@@ -16,6 +18,18 @@ const Contact = props => {
     wrapperCol: {
       span: 16,
     },
+  };
+
+  const onSubmit = async values => {
+    try {
+      setLoading(true);
+      await axios.post('/api/mail', values?.user);
+      message.success(t('contactFormMessages.successSentMessage'));
+    } catch (e) {
+      message.error(t('contactFormMessages.errorSentMessage'));
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -29,7 +43,7 @@ const Contact = props => {
         <SectionTitle titleId="sectionTitleContactUs" type="h2" />
         <Row justify="space-between">
           <Col sm={{ span: 24 }} md={{ span: 10 }}>
-            <Form name="contact_us" {...layout}>
+            <Form name="contact_us" {...layout} onFinish={onSubmit}>
               <Form.Item
                 name={['user', 'name']}
                 label={t('contactFormLabels.name')}
@@ -61,8 +75,7 @@ const Contact = props => {
                 label={t('contactFormLabels.phone')}
                 rules={[
                   {
-                    type: 'number',
-                    required: true,
+                    required: false,
                     message: t('validations.phoneNumberRequired'),
                   },
                 ]}
@@ -96,8 +109,8 @@ const Contact = props => {
                 <Input.TextArea autoSize={{ minRows: 10, maxRows: 10 }} />
               </Form.Item>
               <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 14 }}>
-                <Button type="primary" htmlType="submit">
-                  Submit
+                <Button type="primary" htmlType="submit" disabled={loading} loading={loading}>
+                  {t('contactFormLabels.btnText')}
                 </Button>
               </Form.Item>
             </Form>

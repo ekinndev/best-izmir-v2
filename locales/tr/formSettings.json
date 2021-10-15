@@ -11,6 +11,11 @@
     "email": "Email",
     "phone": "Telefon Numarası",
     "subject": "Konu",
-    "message": "Mesaj"
+    "message": "Mesaj",
+    "btnText": "Gönder"
+  },
+  "contactFormMessages": {
+    "successSentMessage": "Mesaj başarılı bir şekilde gönderildi. En kısa sürede seninle iletişime geçeceğiz.",
+    "errorSentMessage": "Bir hata oluştu. Lütfen daha sonra tekrar dene"
   }
 }
