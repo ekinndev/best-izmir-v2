@@ -11,7 +11,7 @@ export default async (req, res) => {
   `;
 
   const msg = {
-    to: 'izmir@best.eu.org',
+    to: 'izmir@best-eu.org',
     from: 'contact@em3543.bestizmirege.org',
     subject: `${req.body?.subject} - Iletisim Formu Doldurumu`,
     text: payload,
