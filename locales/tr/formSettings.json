@@ -1,0 +1,16 @@
+{
+  "validations": {
+    "nameRequired": "Lütfen bir isim girin",
+    "emailRequired": "Lütfen geçerli bir email girin",
+    "phoneNumberRequired": "Lütfen geçerli bir telefon numarası girin",
+    "subjectRequired": "Lütfen bir konu girin",
+    "messageRequired": "Lütfen bir mesaj girin"
+  },
+  "contactFormLabels": {
+    "name": "İsim",
+    "email": "Email",
+    "phone": "Telefon Numarası",
+    "subject": "Konu",
+    "message": "Mesaj"
+  }
+}
