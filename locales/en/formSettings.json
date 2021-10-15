@@ -1,0 +1,16 @@
+{
+  "validations": {
+    "nameRequired": "Please enter a name",
+    "emailRequired": "Please enter a valid email",
+    "phoneNumberRequired": "Please enter a valid phone number",
+    "subjectRequired": "Please enter a subject",
+    "messageRequired": "Please enter a message"
+  },
+  "contactFormLabels": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message"
+  }
+}
