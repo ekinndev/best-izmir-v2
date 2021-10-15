@@ -16,10 +16,12 @@ const Hero = ({ titleId, contentId, image, link, buttonTextId }) => {
       <div className={styles.backdrop} />
       <div className={styles.content}>
         <div className={styles.hero_title}>{t(titleId)}</div>
-        <div className={styles.hero_content}>{t(contentId)}</div>
-        <a href={link} className={styles.hero_button} target="_blank" rel="noopener noreferrer">
-          {t(buttonTextId)}
-        </a>
+        {contentId && <div className={styles.hero_content}>{t(contentId)}</div>}
+        {buttonTextId && (
+          <a href={link} className={styles.hero_button} target="_blank" rel="noopener noreferrer">
+            {t(buttonTextId)}
+          </a>
+        )}
       </div>
     </div>
   );
