@@ -11,6 +11,11 @@
     "email": "Email",
     "phone": "Phone Number",
     "subject": "Subject",
-    "message": "Message"
+    "message": "Message",
+    "btnText": "Submit"
+  },
+  "contactFormMessages": {
+    "successSentMessage": "Message sent successfully. We will reach you ASAP",
+    "errorSentMessage": "An error has occured please try again later"
   }
 }
