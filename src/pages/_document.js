@@ -15,6 +15,9 @@ class MyDocument extends Document {
           <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
           <meta name="language" content="English" />
           <meta name="author" content="Best Izmir" />
+
+          <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+          <link rel="icon" type="image/png" href="/favicon/favicon.png" />
         </Head>
         <body>
           <Main />
