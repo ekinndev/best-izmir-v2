@@ -24,9 +24,9 @@ export default function Home({ instagramFeedData }) {
       />
       <section className="events">
         <SectionTitle titleId="eventsSectionTitleHome" type="h2" />
-        <Row gutter={[16, 24]}>
+        <Row gutter={[16, 24]} justify="center">
           {homePageEvents.map(event => (
-            <Col sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }} key={event.titleKey}>
+            <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 8 }} key={event.titleKey}>
               <NextLink href={event.link}>
                 <Card
                   title={t(event.titleKey)}
@@ -42,9 +42,9 @@ export default function Home({ instagramFeedData }) {
       </section>
       <section className="partners">
         <SectionTitle titleId="partnersSectionTitleHome" type="h2" />
-        <Row gutter={[16, 24]}>
+        <Row gutter={[16, 24]} justify="center" align="middle">
           {homePagePartners.map(partner => (
-            <Col sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }} key={partner.id}>
+            <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 8 }} key={partner.id}>
               <Image src={partner.imageLink} width={464} height={150} />
             </Col>
           ))}
@@ -53,20 +53,18 @@ export default function Home({ instagramFeedData }) {
       {instagramFeedData?.data?.length > 0 && (
         <section className="instagram">
           <SectionTitle titleId="instagramSectionTitleHome" type="h2" />
-          <Row gutter={[16, 24]}>
-            {instagramFeedData.data.slice(0, 6).map(post => (
-              <Col sm={{ span: 24 }} md={{ span: 12 }} lg={{ span: 8 }} key={post.id}>
+          <Row gutter={[16, 24]} justify="center">
+            {instagramFeedData.data.slice(0, 8).map(post => (
+              <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={post.id}>
                 <NextLink href={post.permalink}>
                   <Card
                     bordered
-                    style={{ minHeight: '525px' }}
                     cover={
                       // eslint-disable-next-line react/jsx-wrap-multilines
                       <img
                         src={post.media_url}
-                        width={1080}
-                        height={262}
                         alt={post.caption.slice(0, 20)}
+                        style={{ aspectRatio: '1/1' }}
                         loading="lazy"
                       />
                     }
@@ -78,7 +76,9 @@ export default function Home({ instagramFeedData }) {
                       }
                       title={`@${post.username}`}
                     />
-                    {`${post.caption.slice(0, 400)}...`}
+                    <div style={{ maxHeight: '250px', minHeight: '250px', textOverflow: 'ellipsis', overflow: 'auto' }}>
+                      {`${post.caption.slice(0, 400)}...`}
+                    </div>
                   </Card>
                 </NextLink>
               </Col>
