@@ -14,6 +14,7 @@ import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
 import { toggleTheme } from '../../store/slices/common';
 import staticPages from '../../constants/Pages';
+import useWindowSize from '../../hooks/useWindowSize';
 
 const Layout = ({ children }) => {
   const router = useRouter();
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
 
   const { t, i18n } = useTranslation('menu');
   const pagesTranslation = useTranslation('pages');
+  const size = useWindowSize();
 
   const toggleLanguage = () => {
     setTimeout(() => {
@@ -61,71 +63,138 @@ const Layout = ({ children }) => {
       <Head>
         <title>{`${pagesTranslation.t(pageInfo?.titleKey)} | ${pagesTranslation.t('bestIzmir')}`}</title>
       </Head>
-      <Sider className="sidebar" theme={theme} collapsed={collapsed} onCollapse={onCollapse} collapsible>
-        <div className={LogoStyles.logo}>
-          {!collapsed && <Logo width={225} height={125} isDark={theme === 'dark'} />}
-        </div>
-        <Row justify="center">
-          <Col>
-            <Switch
-              size="default"
-              defaultChecked={i18n.language === 'en'}
-              onChange={toggleLanguage}
-              unCheckedChildren="TR"
-              disabled={session}
-              checkedChildren="EN"
-            />
-          </Col>
-        </Row>
+      {size?.width < 700 && (
+        <>
+          {/* <Row justify="center">
+            <Col>
 
-        <Menu
-          theme={theme}
-          defaultSelectedKeys={['1']}
-          mode="inline"
-          selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
-        >
-          {MENU_CONSTANT.map(menuItem => {
-            if (menuItem.id === '/login' && session) return null;
-            if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
-            if (menuItem.protected && !session) return null;
-            if (menuItem.subMenu) {
+            </Col>
+          </Row> */}
+
+          <Menu
+            theme={theme}
+            defaultSelectedKeys={['1']}
+            mode="horizontal"
+            selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
+          >
+            {MENU_CONSTANT.map(menuItem => {
+              if (menuItem.id === '/login' && session) return null;
+              if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
+              if (menuItem.protected && !session) return null;
+              if (menuItem.subMenu) {
+                return (
+                  <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>
+                    {menuItem.subMenuComponents.map(item => (
+                      <Menu.Item key={item.id} icon={item.icon}>
+                        <Link href={menuItem.route + item.route}>
+                          <a>{t(item.languageKey)}</a>
+                        </Link>
+                      </Menu.Item>
+                    ))}
+                  </SubMenu>
+                );
+              }
               return (
-                <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>
-                  {menuItem.subMenuComponents.map(item => (
-                    <Menu.Item key={item.id} icon={item.icon}>
-                      <Link href={menuItem.route + item.route}>
-                        <a>{t(item.languageKey)}</a>
-                      </Link>
-                    </Menu.Item>
-                  ))}
-                </SubMenu>
+                <Menu.Item key={menuItem.id} icon={menuItem.icon}>
+                  {menuItem.isExternal ? (
+                    <a href={menuItem.route}>{t(menuItem.languageKey)}</a>
+                  ) : (
+                    <Link href={menuItem.route}>
+                      <a>{t(menuItem.languageKey)}</a>
+                    </Link>
+                  )}
+                </Menu.Item>
               );
-            }
-            return (
-              <Menu.Item key={menuItem.id} icon={menuItem.icon}>
-                {menuItem.isExternal ? (
-                  <a href={menuItem.route}>{t(menuItem.languageKey)}</a>
-                ) : (
-                  <Link href={menuItem.route}>
-                    <a>{t(menuItem.languageKey)}</a>
-                  </Link>
-                )}
-              </Menu.Item>
-            );
-          })}
-        </Menu>
-        <Row justify="center">
-          <Col>
-            <Switch
-              size="default"
-              defaultChecked={theme === 'dark'}
-              onChange={toggleThemeHandler}
-              unCheckedChildren={<BsSun />}
-              checkedChildren={<BsMoon />}
-            />
-          </Col>
-        </Row>
-      </Sider>
+            })}
+            <Menu.Item>
+              <Row justify="space-between">
+                <Switch
+                  size="default"
+                  defaultChecked={theme === 'dark'}
+                  onChange={toggleThemeHandler}
+                  unCheckedChildren={<BsSun />}
+                  checkedChildren={<BsMoon />}
+                />
+                <Switch
+                  size="default"
+                  defaultChecked={i18n.language === 'en'}
+                  onChange={toggleLanguage}
+                  unCheckedChildren="TR"
+                  disabled={session}
+                  checkedChildren="EN"
+                />
+              </Row>
+            </Menu.Item>
+          </Menu>
+        </>
+      )}
+      {size?.width >= 700 && (
+        <Sider className="sidebar" theme={theme} collapsed={collapsed} onCollapse={onCollapse} collapsible>
+          <div className={LogoStyles.logo}>
+            {!collapsed && <Logo width={225} height={125} isDark={theme === 'dark'} />}
+          </div>
+          <Row justify="center">
+            <Col>
+              <Switch
+                size="default"
+                defaultChecked={i18n.language === 'en'}
+                onChange={toggleLanguage}
+                unCheckedChildren="TR"
+                disabled={session}
+                checkedChildren="EN"
+              />
+            </Col>
+          </Row>
+
+          <Menu
+            theme={theme}
+            defaultSelectedKeys={['1']}
+            mode="inline"
+            selectedKeys={selectedKeys.length > 1 ? selectedKeys.slice(1) : selectedKeys}
+          >
+            {MENU_CONSTANT.map(menuItem => {
+              if (menuItem.id === '/login' && session) return null;
+              if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
+              if (menuItem.protected && !session) return null;
+              if (menuItem.subMenu) {
+                return (
+                  <SubMenu key={menuItem.id} icon={menuItem.icon} title={t(menuItem.languageKey)}>
+                    {menuItem.subMenuComponents.map(item => (
+                      <Menu.Item key={item.id} icon={item.icon}>
+                        <Link href={menuItem.route + item.route}>
+                          <a>{t(item.languageKey)}</a>
+                        </Link>
+                      </Menu.Item>
+                    ))}
+                  </SubMenu>
+                );
+              }
+              return (
+                <Menu.Item key={menuItem.id} icon={menuItem.icon}>
+                  {menuItem.isExternal ? (
+                    <a href={menuItem.route}>{t(menuItem.languageKey)}</a>
+                  ) : (
+                    <Link href={menuItem.route}>
+                      <a>{t(menuItem.languageKey)}</a>
+                    </Link>
+                  )}
+                </Menu.Item>
+              );
+            })}
+          </Menu>
+          <Row justify="center">
+            <Col>
+              <Switch
+                size="default"
+                defaultChecked={theme === 'dark'}
+                onChange={toggleThemeHandler}
+                unCheckedChildren={<BsSun />}
+                checkedChildren={<BsMoon />}
+              />
+            </Col>
+          </Row>
+        </Sider>
+      )}
       <ALayout className="main-layout">
         {/* <Header /> */}
         <Content>{children}</Content>

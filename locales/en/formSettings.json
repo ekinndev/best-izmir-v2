@@ -9,7 +9,7 @@
   "contactFormLabels": {
     "name": "Name",
     "email": "Email",
-    "phone": "Phone Number",
+    "phone": "Phone",
     "subject": "Subject",
     "message": "Message",
     "btnText": "Submit"

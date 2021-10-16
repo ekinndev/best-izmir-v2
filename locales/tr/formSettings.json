@@ -9,7 +9,7 @@
   "contactFormLabels": {
     "name": "İsim",
     "email": "Email",
-    "phone": "Telefon Numarası",
+    "phone": "Telefon",
     "subject": "Konu",
     "message": "Mesaj",
     "btnText": "Gönder"
