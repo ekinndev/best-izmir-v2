@@ -8,7 +8,7 @@ const Footer = props => {
 
   return (
     <AFooter className="footer-menu">
-      <Row justify="space-between">
+      <Row justify="center">
         <Col sm={{ span: 24 }} md={{ span: 12 }}>
           <div className="social_media">
             <a href="https://github.com/BEST-Izmir" target="_blank" rel="noopener noreferrer">
