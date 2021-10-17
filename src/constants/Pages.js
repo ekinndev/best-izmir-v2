@@ -28,8 +28,8 @@ const staticPages = [
     titleKey: 'autumnCoursePageTitle',
   },
   {
-    page: '/gallery',
-    titleKey: 'galleryPageTitle',
+    page: '/faq',
+    titleKey: 'faqPageTitle',
   },
   {
     page: '/contact',
