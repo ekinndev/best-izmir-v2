@@ -4,6 +4,6 @@
   "meetingButtonText": "Create Meeting",
   "meetingButtonLoadingText": "Please Wait",
   "meetingSuccessMessage": "Meeting Created Succesfully!",
-  "duplicateMeetingErrorMessage": "This meeting name is already taken!",
-  "unexpectedErrorMessage": "An Error Occured!"
+  "unexpectedErrorMessage": "An Error Occured!",
+  "meetingUpdateSuccessMessage": "Meeting updated successfully!"
 }

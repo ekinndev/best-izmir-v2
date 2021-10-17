@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useSession, getSession, signOut } from 'next-auth/client';
 import { Button, message, Spin } from 'antd';
 import { useTranslation } from 'next-i18next';
+import firebase from 'firebase';
 import firestore from '../../utils/db';
 import styles from './styles.module.scss';
 
@@ -30,6 +31,12 @@ const Profile = props => {
         return message.error(t('findMeetingError'));
       }
 
+      const fetchedMeetingData = meetingData.data();
+
+      if (!fetchedMeetingData.isAttandable) {
+        return message.error(t('attentError'));
+      }
+
       const userMeeting = meeting.collection('attendees').doc(session.user.userId);
       const userMeetingData = await userMeeting.get();
 
@@ -37,7 +44,11 @@ const Profile = props => {
         return message.error(t('duplicateAttentMeeting'));
       }
 
-      await userMeeting.set({ email: session.user.email, name: session.user.name });
+      await userMeeting.set({
+        email: session.user.email,
+        name: session.user.name,
+        created: firebase.firestore.Timestamp.now().toDate().toLocaleString(),
+      });
 
       message.success(t('successAttentMeeting'));
 

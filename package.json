@@ -29,7 +29,8 @@
     "react-icons": "^4.3.1",
     "react-qr-reader": "^2.2.1",
     "react-redux": "^7.2.5",
-    "sass": "^1.42.1"
+    "sass": "^1.42.1",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
