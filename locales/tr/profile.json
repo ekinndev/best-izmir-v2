@@ -2,5 +2,6 @@
   "findMeetingError": "Toplantı Bulunamadı!",
   "duplicateAttentMeeting": "Bu Toplantıya Daha Önce Katılmışsın!",
   "successAttentMeeting": "Toplantıya Başarılı Bir Şekilde Katıldın!",
-  "unexpectedError": "Beklenmeyen bir hata oluştu"
+  "unexpectedError": "Beklenmeyen bir hata oluştu",
+  "attentError": "Bu toplantı sona ermiş!"
 }

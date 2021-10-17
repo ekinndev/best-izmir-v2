@@ -5,5 +5,6 @@
   "meetingButtonLoadingText": "Lütfen Bekleyin",
   "meetingSuccessMessage": "Toplantı Başarılı Bir Şekilde Oluşturuldu!",
   "duplicateMeetingErrorMessage": "Bu toplantı ismi daha önce kullanılmış!",
-  "unexpectedErrorMessage": "Beklenmeyen bir hata oluştu!"
+  "unexpectedErrorMessage": "Beklenmeyen bir hata oluştu!",
+  "meetingUpdateSuccessMessage": "Toplantı başarılı bir şekilde güncellendi!"
 }

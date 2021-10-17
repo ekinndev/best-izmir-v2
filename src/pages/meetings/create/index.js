@@ -28,6 +28,7 @@ const CreateMeeting = () => {
         createdByName: session.user.name,
         createdByEmail: session.user.email,
         created: firebase.firestore.Timestamp.now().toDate().toLocaleString(),
+        isAttandable: true,
       });
       setMeetingKey(values.meeting_name);
       setShowQr(true);

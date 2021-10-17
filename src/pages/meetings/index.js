@@ -1,15 +1,19 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { getSession } from 'next-auth/client';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AiOutlineSearch } from 'react-icons/ai';
-import { Table, Input, Button, Space } from 'antd';
+import { Table, Input, Button, Space, Switch, message } from 'antd';
+import { useTranslation } from 'next-i18next';
 import styles from './styles.module.scss';
 import firestore from '../../utils/db';
 import NextLink from '../../components/NextLink/NextLink';
 
 const Meetings = props => {
   const [data, setData] = useState(null);
+  const [loadingMeetingStatus, setLoadingMeetingStatus] = useState(false);
+  const [querySnapshotData, setQuerySnapShotData] = useState(null);
+  const { t } = useTranslation('meeting');
 
   const handleSearch = (selectedKeys, confirm) => {
     confirm();
@@ -78,8 +82,6 @@ const Meetings = props => {
       key: 'createdEmail',
       width: '50%',
       ...getColumnSearchProps('createdByEmail'),
-      sorter: (a, b) => a.address.length - b.address.length,
-      sortDirections: ['descend', 'ascend'],
     },
     {
       title: "Creator's Name",
@@ -92,20 +94,67 @@ const Meetings = props => {
       dataIndex: 'created',
       key: 'createTime',
     },
+    {
+      title: 'Is Attandable',
+      dataIndex: 'controls',
+      key: 'controls',
+    },
   ];
+
+  const changeMeetingStatus = useCallback(
+    async (id, value) => {
+      setLoadingMeetingStatus(true);
+      try {
+        const meetingRef = await firestore.collection('meetings').doc(id);
+        await meetingRef.update({
+          isAttandable: value,
+        });
+
+        return message.success(t('meetingUpdateSuccessMessage'));
+      } catch (e) {
+        return message.error(t('unexpectedErrorMessage'));
+      } finally {
+        setLoadingMeetingStatus(false);
+      }
+    },
+    [t],
+  );
 
   useEffect(() => {
     const initFunc = async () => {
-      const tableData = [];
-      const querySnapshot = await firestore.collection('meetings').get();
-      querySnapshot.forEach(doc => {
-        tableData.push({ key: doc.id, id: doc.id, ...doc.data() });
-      });
-      setData(tableData);
+      try {
+        const querySnapshot = await firestore.collection('meetings').get();
+        setQuerySnapShotData(querySnapshot);
+      } catch (e) {
+        setQuerySnapShotData([]);
+      }
     };
 
     initFunc();
   }, []);
+
+  useEffect(() => {
+    if (querySnapshotData) {
+      const tableData = [];
+
+      querySnapshotData.forEach(doc => {
+        tableData.push({
+          key: doc.id,
+          id: doc.id,
+          ...doc.data(),
+          controls: (
+            <Switch
+              defaultChecked={doc.data().isAttandable}
+              onChange={val => changeMeetingStatus(doc.id, val)}
+              disabled={loadingMeetingStatus}
+            />
+          ),
+        });
+      });
+      setData(tableData);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [loadingMeetingStatus, querySnapshotData]);
 
   return (
     <div className={styles.meetings}>
@@ -129,7 +178,7 @@ export const getServerSideProps = async ({ locale, ...ctx }) => {
     };
   }
   return {
-    props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
+    props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages', 'meetings'])) },
   };
 };
 

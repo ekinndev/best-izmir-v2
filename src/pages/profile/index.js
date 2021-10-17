@@ -31,6 +31,12 @@ const Profile = props => {
         return message.error(t('findMeetingError'));
       }
 
+      const fetchedMeetingData = meetingData.data();
+
+      if (!fetchedMeetingData.isAttandable) {
+        return message.error(t('attentError'));
+      }
+
       const userMeeting = meeting.collection('attendees').doc(session.user.userId);
       const userMeetingData = await userMeeting.get();
 
