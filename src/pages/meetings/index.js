@@ -77,6 +77,13 @@ const Meetings = props => {
       render: text => <NextLink href={`/meetings/${text}`}>{text}</NextLink>,
     },
     {
+      title: 'Name',
+      dataIndex: 'friendlyName',
+      key: 'friendlyName',
+      width: '10%',
+      ...getColumnSearchProps('friendlyName'),
+    },
+    {
       title: "Creator's Email",
       dataIndex: 'createdByEmail',
       key: 'createdEmail',
