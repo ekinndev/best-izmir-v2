@@ -77,7 +77,7 @@ const MENU_CONSTANT = [
   },
   {
     id: '/faq',
-    languageKey: 'faq',
+    languageKey: 'Faq',
     subMenu: false,
     route: '/faq',
     subMenuComponents: [],
