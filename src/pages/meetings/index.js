@@ -99,7 +99,7 @@ const Meetings = props => {
       key: 'createTime',
     },
     {
-      title: 'Is Attandable',
+      title: 'Status',
       dataIndex: 'controls',
       key: 'controls',
     },
