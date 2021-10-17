@@ -87,6 +87,11 @@ const Meetings = props => {
       key: 'createdByName',
       ...getColumnSearchProps('createdByName'),
     },
+    {
+      title: 'Create Time',
+      dataIndex: 'created',
+      key: 'createTime',
+    },
   ];
 
   useEffect(() => {

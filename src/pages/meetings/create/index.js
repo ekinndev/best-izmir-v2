@@ -4,6 +4,7 @@ import { getSession, useSession } from 'next-auth/client';
 import QrCode from 'qrcode.react';
 import { Button, Input, Form, message } from 'antd';
 import { useTranslation } from 'next-i18next';
+import firebase from 'firebase/app';
 import styles from './styles.module.scss';
 import firestore from '../../../utils/db';
 
@@ -26,6 +27,7 @@ const CreateMeeting = () => {
       await firestore.collection('meetings').doc(values.meeting_name).set({
         createdByName: session.user.name,
         createdByEmail: session.user.email,
+        created: firebase.firestore.Timestamp.now().toDate().toLocaleString(),
       });
       setMeetingKey(values.meeting_name);
       setShowQr(true);

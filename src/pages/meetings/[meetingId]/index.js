@@ -92,6 +92,12 @@ const Meetings = () => {
       key: 'name',
       ...getColumnSearchProps('name'),
     },
+    {
+      title: 'Join Time',
+      dataIndex: 'created',
+      key: 'createTime',
+      ...getColumnSearchProps('name'),
+    },
   ];
 
   useEffect(() => {
@@ -102,7 +108,12 @@ const Meetings = () => {
         tableData.push({ key: doc.id, id: doc.id, ...doc.data() });
       });
       setData(tableData);
-      const tableCsvData = tableData.map(userData => ({ id: userData.id, email: userData.email, name: userData.name }));
+      const tableCsvData = tableData.map(userData => ({
+        id: userData.id,
+        email: userData.email,
+        name: userData.name,
+        JoinTime: userData.created,
+      }));
 
       setCsvData(tableCsvData);
     };
