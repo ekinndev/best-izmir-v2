@@ -72,7 +72,6 @@ const Meetings = props => {
       title: 'ID',
       dataIndex: 'id',
       key: 'id',
-      width: '10%',
       ...getColumnSearchProps('id'),
       render: text => <NextLink href={`/meetings/${text}`}>{text}</NextLink>,
     },
@@ -80,14 +79,12 @@ const Meetings = props => {
       title: 'Name',
       dataIndex: 'friendlyName',
       key: 'friendlyName',
-      width: '10%',
       ...getColumnSearchProps('friendlyName'),
     },
     {
       title: "Creator's Email",
       dataIndex: 'createdByEmail',
       key: 'createdEmail',
-      width: '50%',
       ...getColumnSearchProps('createdByEmail'),
     },
     {
