@@ -22,7 +22,7 @@ export default NextAuth({
     },
     async session(props) {
       const userEmail = props.user.email;
-      const querySnapshot = await firestore.collection('users').where('isAdmin', '==', true).get();
+      const querySnapshot = await firestore.collection('users').get();
       let firebaseUser = {};
 
       querySnapshot.forEach(doc => {
@@ -33,7 +33,7 @@ export default NextAuth({
         }
       });
 
-      return { ...props, user: { ...props.user, userId: firebaseUser.id, isAdmin: firebaseUser.isAdmin } };
+      return { ...props, user: { ...props.user, userId: firebaseUser.id, isAdmin: firebaseUser?.isAdmin } };
     },
   },
 });
