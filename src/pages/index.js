@@ -20,7 +20,8 @@ export default function Home({ instagramFeedData }) {
         contentId="heroContentHome"
         titleId="heroTitleHome"
         buttonTextId="heroActionButtonTextHome"
-        image="https://via.placeholder.com/1430x500"
+        image="/images/pages/homepage.webp"
+        link="/contact"
       />
       <section className="events">
         <SectionTitle titleId="eventsSectionTitleHome" type="h2" />
