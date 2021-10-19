@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 import axios from 'axios';
 import Hero from '../../components/Hero/Hero';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import ContactHeroImage from '../../assets/pages/contact.webp';
 
 const Contact = props => {
   const { t } = useTranslation('formSettings');
@@ -25,7 +26,7 @@ const Contact = props => {
 
   return (
     <ALayout>
-      <Hero contentId="heroContentContactUs" titleId="heroTitleContactUs" image="/images/pages/contact.webp" />
+      <Hero contentId="heroContentContactUs" titleId="heroTitleContactUs" image={ContactHeroImage} />
       <section className="contact_us">
         <SectionTitle titleId="sectionTitleContactUs" type="h2" />
         <Row justify="center" gutter={[16, 24]}>
