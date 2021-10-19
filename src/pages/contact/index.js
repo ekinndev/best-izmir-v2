@@ -25,11 +25,7 @@ const Contact = props => {
 
   return (
     <ALayout>
-      <Hero
-        contentId="heroContentContactUs"
-        titleId="heroTitleContactUs"
-        image="https://via.placeholder.com/1430x500"
-      />
+      <Hero contentId="heroContentContactUs" titleId="heroTitleContactUs" image="/images/pages/contact.webp" />
       <section className="contact_us">
         <SectionTitle titleId="sectionTitleContactUs" type="h2" />
         <Row justify="center" gutter={[16, 24]}>

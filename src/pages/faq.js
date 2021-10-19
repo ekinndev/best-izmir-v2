@@ -14,7 +14,7 @@ const Faq = props => {
 
   return (
     <Layout>
-      <Hero titleId="heroTitleFAQ" contentId="heroContentFaq" image="https://via.placeholder.com/1430x500" />
+      <Hero titleId="heroTitleFAQ" contentId="heroContentFaq" image="/images/pages/faq.webp" />
       <SectionTitle type="h2" titleId="sectionTitleFAQ" />
       <Collapse>
         {FAQ_QUESTIONS.map(question => (

@@ -12,7 +12,7 @@ const AboutUs = props => {
 
   return (
     <ALayout>
-      <Hero contentId="heroContentAboutUs" titleId="heroTitleAboutUs" image="https://via.placeholder.com/1430x500" />
+      <Hero contentId="heroContentAboutUs" titleId="heroTitleAboutUs" image="/images/pages/aboutus.webp" />
       <section className="about_us">
         <SectionTitle titleId="sectionTitleAboutUs" type="h2" />
         <Row justify="center">
