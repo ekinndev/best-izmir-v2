@@ -8,6 +8,7 @@ import Hero from '../components/Hero/Hero';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import NextLink from '../components/NextLink/NextLink';
 import { homePageEvents, homePagePartners } from '../constants/Home';
+import HomePageHeroImage from '../assets/pages/homepage.webp';
 
 export default function Home({ instagramFeedData }) {
   const router = useRouter();
@@ -20,7 +21,7 @@ export default function Home({ instagramFeedData }) {
         contentId="heroContentHome"
         titleId="heroTitleHome"
         buttonTextId="heroActionButtonTextHome"
-        image="/images/pages/homepage.webp"
+        image={HomePageHeroImage}
         link="/contact"
       />
       <section className="events">

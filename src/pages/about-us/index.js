@@ -6,13 +6,14 @@ import { useTranslation } from 'next-i18next';
 import Hero from '../../components/Hero/Hero';
 import SectionTitle from '../../components/SectionTitle/SectionTitle';
 import styles from './styles.module.scss';
+import AboutHeroImage from '../../assets/pages/aboutus.webp';
 
 const AboutUs = props => {
   const { t } = useTranslation('about_us');
 
   return (
     <ALayout>
-      <Hero contentId="heroContentAboutUs" titleId="heroTitleAboutUs" image="/images/pages/aboutus.webp" />
+      <Hero contentId="heroContentAboutUs" titleId="heroTitleAboutUs" image={AboutHeroImage} />
       <section className="about_us">
         <SectionTitle titleId="sectionTitleAboutUs" type="h2" />
         <Row justify="center">

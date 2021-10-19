@@ -1,10 +1,13 @@
 /* eslint-disable import/prefer-default-export */
+import ebecLogo from '../assets/logos/ebec.svg';
+import courseLogo from '../assets/logos/course.svg';
+
 export const homePageEvents = [
   {
     titleKey: 'events.ebecTitle',
     contentKey: 'events.ebecContent',
     link: '/events/ebec',
-    imageLink: 'https://via.placeholder.com/464x150',
+    imageLink: ebecLogo,
   },
   {
     titleKey: 'events.mwIzmirTitle',
@@ -28,13 +31,7 @@ export const homePageEvents = [
     titleKey: 'events.courseTitle',
     contentKey: 'events.courseContent',
     link: '/events/ebec',
-    imageLink: 'https://via.placeholder.com/464x150',
-  },
-  {
-    titleKey: 'events.otherTitle',
-    contentKey: 'events.otherContent',
-    link: '/events/ebec',
-    imageLink: 'https://via.placeholder.com/464x150',
+    imageLink: courseLogo,
   },
 ];
 

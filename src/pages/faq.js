@@ -6,6 +6,7 @@ import { useTranslation } from 'next-i18next';
 import Hero from '../components/Hero/Hero';
 import SectionTitle from '../components/SectionTitle/SectionTitle';
 import FAQ_QUESTIONS from '../constants/Faq';
+import FaqHeroImage from '../assets/pages/faq.webp';
 
 const Faq = props => {
   const { Panel } = Collapse;
@@ -14,7 +15,7 @@ const Faq = props => {
 
   return (
     <Layout>
-      <Hero titleId="heroTitleFAQ" contentId="heroContentFaq" image="/images/pages/faq.webp" />
+      <Hero titleId="heroTitleFAQ" contentId="heroContentFaq" image={FaqHeroImage} />
       <SectionTitle type="h2" titleId="sectionTitleFAQ" />
       <Collapse>
         {FAQ_QUESTIONS.map(question => (
