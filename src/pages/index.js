@@ -23,6 +23,7 @@ export default function Home({ instagramFeedData }) {
         buttonTextId="heroActionButtonTextHome"
         image={HomePageHeroImage}
         link="/contact"
+        showLogo
       />
       <section className="events">
         <SectionTitle titleId="eventsSectionTitleHome" type="h2" />
