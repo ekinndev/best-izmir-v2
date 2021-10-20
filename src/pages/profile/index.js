@@ -5,7 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useSession, getSession, signOut } from 'next-auth/client';
 import { Button, message, Spin } from 'antd';
 import { useTranslation } from 'next-i18next';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import firestore from '../../utils/db';
 import styles from './styles.module.scss';
 
