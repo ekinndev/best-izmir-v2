@@ -78,7 +78,7 @@ export default function Home({ instagramFeedData }) {
                       <Meta
                         avatar={
                           // eslint-disable-next-line max-len
-                          <Avatar src="/images/logo.jpg" />
+                          <Avatar src="/images/logo.webp" />
                         }
                         title={`@${post.username}`}
                       />
