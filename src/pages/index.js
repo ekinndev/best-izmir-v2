@@ -57,35 +57,40 @@ export default function Home({ instagramFeedData }) {
         <section className="instagram">
           <SectionTitle titleId="instagramSectionTitleHome" type="h2" />
           <Row gutter={[16, 24]} justify="center">
-            {instagramFeedData.data.slice(0, 8).map(post => (
-              <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={post.id}>
-                <NextLink href={post.permalink}>
-                  <Card
-                    bordered
-                    cover={
-                      // eslint-disable-next-line react/jsx-wrap-multilines
-                      <img
-                        src={post.media_url}
-                        alt={post.caption.slice(0, 20)}
-                        style={{ aspectRatio: '1/1' }}
-                        loading="lazy"
-                      />
-                    }
-                  >
-                    <Meta
-                      avatar={
-                        // eslint-disable-next-line max-len
-                        <Avatar src="/images/logo.jpg" />
+            {instagramFeedData.data
+              .filter(data => data.media_type === 'IMAGE')
+              .slice(0, 8)
+              .map(post => (
+                <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={post.id}>
+                  <NextLink href={post.permalink}>
+                    <Card
+                      bordered
+                      cover={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <img
+                          src={post.media_url}
+                          alt={post.caption.slice(0, 20)}
+                          style={{ aspectRatio: '1/1' }}
+                          loading="lazy"
+                        />
                       }
-                      title={`@${post.username}`}
-                    />
-                    <div style={{ maxHeight: '250px', minHeight: '250px', textOverflow: 'ellipsis', overflow: 'auto' }}>
-                      {`${post.caption.slice(0, 400)}...`}
-                    </div>
-                  </Card>
-                </NextLink>
-              </Col>
-            ))}
+                    >
+                      <Meta
+                        avatar={
+                          // eslint-disable-next-line max-len
+                          <Avatar src="/images/logo.jpg" />
+                        }
+                        title={`@${post.username}`}
+                      />
+                      <div
+                        style={{ maxHeight: '250px', minHeight: '250px', textOverflow: 'ellipsis', overflow: 'auto' }}
+                      >
+                        {`${post.caption.slice(0, 400)}...`}
+                      </div>
+                    </Card>
+                  </NextLink>
+                </Col>
+              ))}
           </Row>
         </section>
       )}
