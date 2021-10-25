@@ -1,7 +1,6 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
-import { Avatar, Card, Col, Layout as ALayout, Row, Carousel } from 'antd';
+import { Avatar, Card, Col, Layout as ALayout, Row } from 'antd';
 import Image from 'next/image';
 import axios from 'axios';
 import Hero from '../components/Hero/Hero';
@@ -11,7 +10,6 @@ import { homePageEvents, homePagePartners } from '../constants/Home';
 import HomePageHeroImage from '../assets/pages/homepage.webp';
 
 export default function Home({ instagramFeedData }) {
-  const router = useRouter();
   const { t } = useTranslation('common');
   const { Meta } = Card;
 
