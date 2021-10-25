@@ -1,6 +1,17 @@
 /* eslint-disable import/prefer-default-export */
 import ebecLogo from '../assets/logos/ebec.svg';
 import courseLogo from '../assets/logos/course.svg';
+import partnerLogo1 from '../assets/partners/1.png';
+import partnerLogo2 from '../assets/partners/2.png';
+import partnerLogo3 from '../assets/partners/3.png';
+import partnerLogo4 from '../assets/partners/4.png';
+import partnerLogo5 from '../assets/partners/5.png';
+import partnerLogo6 from '../assets/partners/6.svg';
+import partnerLogo7 from '../assets/partners/7.png';
+import partnerLogo8 from '../assets/partners/8.png';
+import partnerLogo9 from '../assets/partners/9.png';
+import partnerLogo10 from '../assets/partners/10.png';
+import partnerLogo11 from '../assets/partners/11.png';
 
 export const homePageEvents = [
   {
@@ -36,7 +47,15 @@ export const homePageEvents = [
 ];
 
 export const homePagePartners = [
-  { id: '1', imageLink: 'https://via.placeholder.com/464x150' },
-  { id: '2', imageLink: 'https://via.placeholder.com/464x150' },
-  { id: '3', imageLink: 'https://via.placeholder.com/464x150' },
+  { id: '1', imageLink: partnerLogo1, width: 150, height: 34, externalLink: 'https://www.renklermakina.com/' },
+  { id: '11', imageLink: partnerLogo2, width: 272, height: 173, externalLink: 'https://bornova.bel.tr/' },
+  { id: '2', imageLink: partnerLogo3, width: 181, height: 90, externalLink: 'http://upegem.org/' },
+  { id: '3', imageLink: partnerLogo4, width: 187, height: 67, externalLink: 'https://www.teol.com.tr/' },
+  { id: '4', imageLink: partnerLogo5, width: 300, height: 155, externalLink: 'http://www.dilekmatbaacilik.com/' },
+  { id: '5', imageLink: partnerLogo6, width: 300, height: 155, externalLink: 'https://www.englishtime.com/' },
+  { id: '6', imageLink: partnerLogo7, width: 300, height: 135, externalLink: 'https://www.kesiad.org/' },
+  { id: '7', imageLink: partnerLogo8, width: 272, height: 75, externalLink: 'http://www.ispanyolkulturdernegi.com/' },
+  { id: '8', imageLink: partnerLogo9, width: 171, height: 242, externalLink: 'https://kusadasi.bel.tr/' },
+  { id: '9', imageLink: partnerLogo10, width: 270, height: 90, externalLink: 'https://kusadasi.bel.tr/' },
+  { id: '10', imageLink: partnerLogo11, width: 177, height: 76, externalLink: 'https://www.americanlife.com.tr/' },
 ];

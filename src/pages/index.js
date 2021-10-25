@@ -1,7 +1,7 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
-import { Avatar, Card, Col, Layout as ALayout, Row } from 'antd';
+import { Avatar, Card, Col, Layout as ALayout, Row, Carousel } from 'antd';
 import Image from 'next/image';
 import axios from 'axios';
 import Hero from '../components/Hero/Hero';
@@ -45,10 +45,12 @@ export default function Home({ instagramFeedData }) {
       </section>
       <section className="partners">
         <SectionTitle titleId="partnersSectionTitleHome" type="h2" />
-        <Row gutter={[16, 24]} justify="center" align="middle">
+        <Row justify="center" align="middle" gutter={[16, 24]}>
           {homePagePartners.map(partner => (
-            <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 8 }} key={partner.id}>
-              <Image src={partner.imageLink} width={464} height={150} />
+            <Col sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} key={partner.id}>
+              <a href={partner.externalLink} target="_blank" rel="noopener noreferrer">
+                <Image src={partner.imageLink} width={partner.width} height={partner.height} />
+              </a>
             </Col>
           ))}
         </Row>
