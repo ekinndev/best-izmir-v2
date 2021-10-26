@@ -6,7 +6,7 @@ import styles from './SectionTitle.module.scss';
 const SectionTitle = ({ titleId, type }) => {
   const { t } = useTranslation('common');
 
-  return React.createElement(type, { className: styles.sectionTitle }, t(titleId).toUpperCase());
+  return React.createElement(type, { className: styles.sectionTitle }, t(titleId));
 };
 
 SectionTitle.propTypes = {};
