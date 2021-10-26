@@ -14,8 +14,8 @@ const Hero = ({ titleId, contentId, image, link, buttonTextId, showLogo = false 
       <div className={styles.backdrop} />
       <div className={styles.content}>
         {showLogo && <Logo width={225} height={125} isDark />}
-        <div className={styles.hero_title}>{t(titleId)}</div>
-        {contentId && <div className={styles.hero_content}>{t(contentId)}</div>}
+        <div className={styles.hero_title}>{t(titleId).toUpperCase()}</div>
+        {contentId && <div className={styles.hero_content}>{t(contentId).toUpperCase()}</div>}
         {buttonTextId && (
           <a href={link} className={styles.hero_button}>
             {t(buttonTextId)}
