@@ -1,6 +1,5 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useRouter } from 'next/router';
 import { Avatar, Card, Col, Layout as ALayout, Row } from 'antd';
 import Image from 'next/image';
 import axios from 'axios';
@@ -11,7 +10,6 @@ import { homePageEvents, homePagePartners } from '../constants/Home';
 import HomePageHeroImage from '../assets/pages/homepage.webp';
 
 export default function Home({ instagramFeedData }) {
-  const router = useRouter();
   const { t } = useTranslation('common');
   const { Meta } = Card;
 
@@ -45,10 +43,12 @@ export default function Home({ instagramFeedData }) {
       </section>
       <section className="partners">
         <SectionTitle titleId="partnersSectionTitleHome" type="h2" />
-        <Row gutter={[16, 24]} justify="center" align="middle">
+        <Row justify="center" align="middle" gutter={[16, 24]}>
           {homePagePartners.map(partner => (
-            <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 8 }} key={partner.id}>
-              <Image src={partner.imageLink} width={464} height={150} />
+            <Col sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} key={partner.id}>
+              <a href={partner.externalLink} target="_blank" rel="noopener noreferrer">
+                <Image src={partner.imageLink} width={partner.width} height={partner.height} />
+              </a>
             </Col>
           ))}
         </Row>
@@ -57,35 +57,40 @@ export default function Home({ instagramFeedData }) {
         <section className="instagram">
           <SectionTitle titleId="instagramSectionTitleHome" type="h2" />
           <Row gutter={[16, 24]} justify="center">
-            {instagramFeedData.data.slice(0, 8).map(post => (
-              <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={post.id}>
-                <NextLink href={post.permalink}>
-                  <Card
-                    bordered
-                    cover={
-                      // eslint-disable-next-line react/jsx-wrap-multilines
-                      <img
-                        src={post.media_url}
-                        alt={post.caption.slice(0, 20)}
-                        style={{ aspectRatio: '1/1' }}
-                        loading="lazy"
-                      />
-                    }
-                  >
-                    <Meta
-                      avatar={
-                        // eslint-disable-next-line max-len
-                        <Avatar src="/images/logo.jpg" />
+            {instagramFeedData.data
+              .filter(data => data.media_type === 'IMAGE')
+              .slice(0, 8)
+              .map(post => (
+                <Col sm={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={post.id}>
+                  <NextLink href={post.permalink}>
+                    <Card
+                      bordered
+                      cover={
+                        // eslint-disable-next-line react/jsx-wrap-multilines
+                        <img
+                          src={post.media_url}
+                          alt={post.caption.slice(0, 20)}
+                          style={{ aspectRatio: '1/1' }}
+                          loading="lazy"
+                        />
                       }
-                      title={`@${post.username}`}
-                    />
-                    <div style={{ maxHeight: '250px', minHeight: '250px', textOverflow: 'ellipsis', overflow: 'auto' }}>
-                      {`${post.caption.slice(0, 400)}...`}
-                    </div>
-                  </Card>
-                </NextLink>
-              </Col>
-            ))}
+                    >
+                      <Meta
+                        avatar={
+                          // eslint-disable-next-line max-len
+                          <Avatar src="/images/logo.webp" />
+                        }
+                        title={`@${post.username}`}
+                      />
+                      <div
+                        style={{ maxHeight: '250px', minHeight: '250px', textOverflow: 'ellipsis', overflow: 'auto' }}
+                      >
+                        {`${post.caption.slice(0, 400)}...`}
+                      </div>
+                    </Card>
+                  </NextLink>
+                </Col>
+              ))}
           </Row>
         </section>
       )}
