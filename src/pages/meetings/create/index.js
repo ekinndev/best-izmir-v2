@@ -102,7 +102,20 @@ const CreateMeeting = () => {
 
   return (
     <div className={styles.meeting_create}>
-      {showQr && <QrCode value={meetingKey} size={210} />}
+      {showQr && (
+        <QrCode
+          value={meetingKey}
+          size={210}
+          imageSettings={{
+            src: '/images/logo.webp',
+            x: null,
+            y: null,
+            height: 32,
+            width: 32,
+            excavate: true,
+          }}
+        />
+      )}
       <Form name="meeting" onFinish={onSubmit}>
         <Form.Item
           label={t('meetingNameLabel')}
