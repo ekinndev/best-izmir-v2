@@ -14,12 +14,6 @@ export default NextAuth({
   ],
   adapter: FirebaseAdapter(firestore),
   callbacks: {
-    async signIn(user, account, profile) {
-      if (account.provider === 'google' && profile.email.endsWith('@best-eu.org')) {
-        return true;
-      }
-      return false;
-    },
     async session(props) {
       const userEmail = props.user.email;
       const querySnapshot = await firestore.collection('users').get();
