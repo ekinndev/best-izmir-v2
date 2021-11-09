@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useSession, getSession, signOut } from 'next-auth/client';
-import { Button, message, Spin } from 'antd';
+import { Button, message, Spin, Form, Input } from 'antd';
 import { useTranslation } from 'next-i18next';
 import firebase from 'firebase/app';
 import firestore from '../../utils/db';
@@ -20,7 +19,9 @@ const Profile = props => {
     message.error(t('unexpectedError'));
   };
 
-  const onScan = async val => {
+  const onScan = async value => {
+    const val = value?.meeting_id ?? value;
+
     if (!val) return false;
     setLoading(true);
     try {
@@ -69,6 +70,21 @@ const Profile = props => {
       ) : (
         <QrReader delay={2000} onError={onError} onScan={onScan} style={{ width: '100%', maxWidth: '500px' }} />
       )}
+
+      <Form name="meeting" onFinish={onScan}>
+        <Form.Item
+          label={t('meetingIdLabel')}
+          name="meeting_id"
+          rules={[{ required: true, message: t('meetingIdErrorMessage') }]}
+        >
+          <Input placeholder={t('meetingIdLabel')} />
+        </Form.Item>
+        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+          <Button type="primary" htmlType="submit" loading={loading}>
+            {!loading ? t('meetingButtonText') : t('meetingButtonLoadingText')}
+          </Button>
+        </Form.Item>
+      </Form>
       <div>{session?.user?.email}</div>
       <div>{session?.user?.name}</div>
       <div>{session?.user?.userId}</div>

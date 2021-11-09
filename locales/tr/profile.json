@@ -3,5 +3,9 @@
   "duplicateAttentMeeting": "Bu Toplantıya Daha Önce Katılmışsın!",
   "successAttentMeeting": "Toplantıya Başarılı Bir Şekilde Katıldın!",
   "unexpectedError": "Beklenmeyen bir hata oluştu",
-  "attentError": "Bu toplantı sona ermiş!"
+  "attentError": "Bu toplantı sona ermiş!",
+  "meetingIdLabel": "Meeting ID",
+  "meetingButtonText": "Katıl",
+  "meetingButtonLoadingText": "Yükleniyor...",
+  "meetingIdErrorMessage": "Toplantı id'si boş olamaz!"
 }
