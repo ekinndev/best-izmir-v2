@@ -6,5 +6,6 @@
   "attentError": "This meeting has ended!",
   "meetingIdLabel": "Meeting ID",
   "meetingButtonText": "Join",
-  "meetingButtonLoadingText": "Loading..."
+  "meetingButtonLoadingText": "Loading...",
+  "meetingIdErrorMessage": "Meeting id can't be empty!"
 }

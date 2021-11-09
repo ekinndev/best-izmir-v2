@@ -6,5 +6,6 @@
   "attentError": "Bu toplantı sona ermiş!",
   "meetingIdLabel": "Meeting ID",
   "meetingButtonText": "Katıl",
-  "meetingButtonLoadingText": "Yükleniyor..."
+  "meetingButtonLoadingText": "Yükleniyor...",
+  "meetingIdErrorMessage": "Toplantı id'si boş olamaz!"
 }
