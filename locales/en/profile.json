@@ -3,5 +3,8 @@
   "duplicateAttentMeeting": "You Attent this Meeting Before !",
   "successAttentMeeting": "You Attent This Meeting Successfully!",
   "unexpectedError": "Unexpected error occured!",
-  "attentError": "This meeting has ended!"
+  "attentError": "This meeting has ended!",
+  "meetingIdLabel": "Meeting ID",
+  "meetingButtonText": "Join",
+  "meetingButtonLoadingText": "Loading..."
 }
