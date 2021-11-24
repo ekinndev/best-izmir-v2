@@ -7,12 +7,12 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { useSelector, useDispatch } from 'react-redux';
 import { BsSun, BsMoon } from 'react-icons/bs';
-import { useSession } from 'next-auth/client';
+import { signOut, useSession } from 'next-auth/client';
 import Footer from './Footer/Footer';
 import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
-import { toggleTheme } from '../../store/slices/common';
+import { fetchUser, toggleTheme } from '../../store/slices/common';
 import staticPages from '../../constants/Pages';
 import useWindowSize from '../../hooks/useWindowSize';
 
@@ -23,6 +23,7 @@ const Layout = ({ children }) => {
   const { Content, Sider } = ALayout;
   const { SubMenu } = Menu;
   const theme = useSelector(state => state.common.theme);
+  const loggedInUser = useSelector(state => state.common.userInfo);
   const dispatch = useDispatch();
   const [collapsed, setCollapsed] = useState(true);
 
@@ -58,6 +59,14 @@ const Layout = ({ children }) => {
 
   const pageInfo = staticPages.find(info => info.page === router.pathname);
 
+  useEffect(() => {
+    if (session && !loggedInUser) {
+      dispatch(fetchUser(session.user.email));
+    } else if (!session && loggedInUser) {
+      signOut();
+    }
+  }, [session, loggedInUser, dispatch]);
+
   return (
     <ALayout>
       <Head>
@@ -79,7 +88,7 @@ const Layout = ({ children }) => {
           >
             {MENU_CONSTANT.map(menuItem => {
               if (menuItem.id === '/login' && session) return null;
-              if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
+              if (menuItem.isAdmin && !loggedInUser?.isAdmin) return null;
               if (menuItem.protected && !session) return null;
               if (menuItem.subMenu) {
                 return (
@@ -154,7 +163,7 @@ const Layout = ({ children }) => {
           >
             {MENU_CONSTANT.map(menuItem => {
               if (menuItem.id === '/login' && session) return null;
-              if (menuItem.isAdmin && !session?.user?.isAdmin) return null;
+              if (menuItem.isAdmin && !loggedInUser?.isAdmin) return null;
               if (menuItem.protected && !session) return null;
               if (menuItem.subMenu) {
                 return (

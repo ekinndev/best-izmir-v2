@@ -5,6 +5,7 @@ import { useSession, getSession, signOut } from 'next-auth/client';
 import { Button, message, Spin, Form, Input } from 'antd';
 import { useTranslation } from 'next-i18next';
 import firebase from 'firebase/app';
+import { useSelector } from 'react-redux';
 import firestore from '../../utils/db';
 import styles from './styles.module.scss';
 
@@ -14,6 +15,7 @@ const Profile = props => {
   const [session] = useSession();
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation('profile');
+  const loggedInUser = useSelector(state => state.common.userInfo);
 
   const onError = () => {
     message.error(t('unexpectedError'));
@@ -38,7 +40,7 @@ const Profile = props => {
         return message.error(t('attentError'));
       }
 
-      const userMeeting = meeting.collection('attendees').doc(session.user.userId);
+      const userMeeting = meeting.collection('attendees').doc(loggedInUser.userId);
       const userMeetingData = await userMeeting.get();
 
       if (userMeetingData.exists) {
@@ -87,7 +89,7 @@ const Profile = props => {
       </Form>
       <div>{session?.user?.email}</div>
       <div>{session?.user?.name}</div>
-      <div>{session?.user?.userId}</div>
+      <div>{loggedInUser?.userId}</div>
       <Button danger type="primary" htmlType="button" onClick={signOut}>
         Çıkış Yap
       </Button>
