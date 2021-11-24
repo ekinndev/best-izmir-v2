@@ -30,4 +30,11 @@ export default NextAuth({
       return { ...props, user: { ...props.user, userId: firebaseUser.id, isAdmin: firebaseUser?.isAdmin } };
     },
   },
+  pages: {
+    signIn: '/signin',
+    signOut: '/auth/signout',
+    error: '/auth/error',
+    verifyRequest: '/auth/verify-request',
+    newUser: null,
+  },
 });

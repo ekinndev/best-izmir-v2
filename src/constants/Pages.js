@@ -47,6 +47,10 @@ const staticPages = [
     page: '/meetings/create',
     titleKey: 'meetingsCreatePageTitle',
   },
+  {
+    page: '/signin',
+    titleKey: 'loginPageTitle',
+  },
 ];
 
 export default staticPages;
