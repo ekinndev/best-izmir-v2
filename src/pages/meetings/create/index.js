@@ -6,6 +6,7 @@ import { Button, Input, Form, message, Table } from 'antd';
 import { useTranslation } from 'next-i18next';
 import firebase from 'firebase/app';
 import { v4 as uuidv4 } from 'uuid';
+import { useSelector } from 'react-redux';
 import styles from './styles.module.scss';
 import firestore from '../../../utils/db';
 
@@ -14,6 +15,7 @@ const CreateMeeting = () => {
   const [loading, setLoading] = useState(false);
   const [tableData, setTableData] = useState(null);
   const [showQr, setShowQr] = useState(false);
+  const loggedInUser = useSelector(state => state.common.userInfo);
   const [session] = useSession();
   const { t } = useTranslation('meeting');
 
@@ -100,7 +102,7 @@ const CreateMeeting = () => {
     }
   };
 
-  return (
+  return !loggedInUser?.isAdmin ? null : (
     <div className={styles.meeting_create}>
       {showQr && (
         <QrCode
@@ -143,7 +145,7 @@ CreateMeeting.propTypes = {};
 export const getServerSideProps = async ({ locale, ...ctx }) => {
   const session = await getSession(ctx);
 
-  if (!session || !session.user.isAdmin) {
+  if (!session) {
     return {
       redirect: {
         destination: '/',

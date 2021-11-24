@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Table, Input, Button, Space, Switch, message } from 'antd';
 import { useTranslation } from 'next-i18next';
+import { useSelector } from 'react-redux';
 import styles from './styles.module.scss';
 import firestore from '../../utils/db';
 import NextLink from '../../components/NextLink/NextLink';
@@ -14,6 +15,7 @@ const Meetings = props => {
   const [loadingMeetingStatus, setLoadingMeetingStatus] = useState(false);
   const [querySnapshotData, setQuerySnapShotData] = useState(null);
   const { t } = useTranslation('meeting');
+  const loggedInUser = useSelector(state => state.common.userInfo);
 
   const handleSearch = (selectedKeys, confirm) => {
     confirm();
@@ -160,7 +162,7 @@ const Meetings = props => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loadingMeetingStatus, querySnapshotData]);
 
-  return (
+  return !loggedInUser?.isAdmin ? null : (
     <div className={styles.meetings}>
       <div style={{ overflowX: 'auto', width: '100%' }}>
         <Table columns={columns} dataSource={data} />
@@ -173,7 +175,7 @@ Meetings.propTypes = {};
 
 export const getServerSideProps = async ({ locale, ...ctx }) => {
   const session = await getSession(ctx);
-  if (!session && !session.user.isAdmin) {
+  if (!session) {
     return {
       redirect: {
         destination: '/',

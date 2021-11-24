@@ -136,8 +136,7 @@ const MENU_CONSTANT = [
     id: '/login',
     languageKey: 'Login',
     subMenu: false,
-    isExternal: true,
-    route: `${process.env.NEXT_PUBLIC_NEXTAUTH_URL}/api/auth/signin`,
+    route: '/signin',
     subMenuComponents: [],
 
     icon: <FcSafe />,

@@ -15,19 +15,27 @@ export default NextAuth({
   adapter: FirebaseAdapter(firestore),
   callbacks: {
     async session(props) {
-      const userEmail = props.user.email;
-      const querySnapshot = await firestore.collection('users').get();
-      let firebaseUser = {};
+      // const userEmail = props.user.email;
+      // const querySnapshot = await firestore.collection('users').get();
+      // let firebaseUser = {};
 
-      querySnapshot.forEach(doc => {
-        const data = doc.data();
+      // querySnapshot.forEach(doc => {
+      //   const data = doc.data();
 
-        if (data.email === userEmail) {
-          firebaseUser = { ...data, id: doc.id };
-        }
-      });
+      //   if (data.email === userEmail) {
+      //     firebaseUser = { ...data, id: doc.id };
+      //   }
+      // });
 
-      return { ...props, user: { ...props.user, userId: firebaseUser.id, isAdmin: firebaseUser?.isAdmin } };
+      return { ...props };
+      // return { ...props, user: { ...props.user, userId: firebaseUser.id, isAdmin: firebaseUser?.isAdmin } };
     },
+  },
+  pages: {
+    signIn: '/signin',
+    signOut: '/auth/signout',
+    error: '/auth/error',
+    verifyRequest: '/auth/verify-request',
+    newUser: null,
   },
 });

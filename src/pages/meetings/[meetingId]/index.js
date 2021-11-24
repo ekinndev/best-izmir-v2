@@ -7,6 +7,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Table, Input, Button, Space } from 'antd';
 import { CSVLink } from 'react-csv';
 import { useTranslation } from 'next-i18next';
+import { useSelector } from 'react-redux';
 import firestore from '../../../utils/db';
 import styles from './styles.module.scss';
 
@@ -16,6 +17,7 @@ const Meetings = () => {
   const [data, setData] = useState(null);
   const [csvData, setCsvData] = useState(null);
   const { t } = useTranslation('pages');
+  const loggedInUser = useSelector(state => state.common.userInfo);
 
   const handleSearch = (selectedKeys, confirm) => {
     confirm();
@@ -119,7 +121,7 @@ const Meetings = () => {
     initFunc();
   }, [meetingId]);
 
-  return (
+  return !loggedInUser?.isAdmin ? null : (
     <div className={styles.meetings}>
       <Head>
         <title>{`${t('meetingIdPageTitle')} ${meetingId} | ${t('bestIzmir')}`}</title>
@@ -140,7 +142,7 @@ Meetings.propTypes = {};
 
 export const getServerSideProps = async ({ locale, ...ctx }) => {
   const session = await getSession(ctx);
-  if (!session && !session.user.isAdmin) {
+  if (!session) {
     return {
       redirect: {
         destination: '/',
