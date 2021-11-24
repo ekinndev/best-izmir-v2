@@ -4,7 +4,7 @@ import { Col, Layout as ALayout, Row, Button } from 'antd';
 
 export default function SignIn({ providers }) {
   return (
-    <ALayout style={{ height: '100% ' }}>
+    <ALayout style={{ height: '100vh' }}>
       <Row justify="center" align="middle" style={{ height: '100% ' }}>
         <Col>
           {Object.values(providers).map(provider => (
