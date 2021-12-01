@@ -21,7 +21,7 @@
     <a href="https://github.com/ekinndev/best-izmir-v2"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://bestizmirege.org/>View Demo</a>
+    <a href="https://bestizmirege.org/">View Demo</a>
     ·
     <a href="https://github.com/ekinndev/best-izmir-v2/issues">Report Bug</a>
     ·
