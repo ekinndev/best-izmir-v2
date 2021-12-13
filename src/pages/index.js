@@ -99,15 +99,24 @@ export default function Home({ instagramFeedData }) {
 }
 
 export const getServerSideProps = async ({ locale }) => {
-  const instagramFeed = await axios.get(
-    // eslint-disable-next-line max-len
-    `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,permalink,thumbnail_url,timestamp,username&access_token=${process.env.INSTAGRAM_TOKEN}`,
-  );
+  try {
+    const instagramFeed = await axios.get(
+      // eslint-disable-next-line max-len
+      `https://graph.instagram.com/me/media?fields=id,caption,media_url,media_type,permalink,thumbnail_url,timestamp,username&access_token=${process.env.INSTAGRAM_TOKEN}`,
+    );
 
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'menu', 'hero', 'pages'])),
-      instagramFeedData: instagramFeed.data || null,
-    },
-  };
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ['common', 'menu', 'hero', 'pages'])),
+        instagramFeedData: instagramFeed.data || null,
+      },
+    };
+  } catch (e) {
+    return {
+      props: {
+        ...(await serverSideTranslations(locale, ['common', 'menu', 'hero', 'pages'])),
+        instagramFeedData: null,
+      },
+    };
+  }
 };
