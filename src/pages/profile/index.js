@@ -11,13 +11,15 @@ import styles from './styles.module.scss';
 
 const QrReader = dynamic(() => import('react-qr-reader'), { ssr: false });
 
-const Profile = props => {
+const Profile = () => {
   const [session] = useSession();
   const [loading, setLoading] = useState(false);
   const { t } = useTranslation('profile');
   const loggedInUser = useSelector(state => state.common.userInfo);
 
-  const onError = () => {
+  const onError = e => {
+    // eslint-disable-next-line no-console
+    console.error(e);
     message.error(t('unexpectedError'));
   };
 
