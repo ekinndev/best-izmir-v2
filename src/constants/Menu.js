@@ -12,6 +12,25 @@ const MENU_CONSTANT = [
     route: '/',
   },
   {
+    id: '/profile',
+    languageKey: 'Profil',
+    subMenu: false,
+    route: '/profile',
+    protected: true,
+    subMenuComponents: [],
+
+    icon: <FcBusinessman />,
+  },
+  {
+    id: '/login',
+    languageKey: 'Login',
+    subMenu: false,
+    route: '/signin',
+    subMenuComponents: [],
+
+    icon: <FcSafe />,
+  },
+  {
     id: '/about-us',
     subMenu: false,
     languageKey: 'About',
@@ -94,16 +113,6 @@ const MENU_CONSTANT = [
     icon: <FcPhone />,
   },
   {
-    id: '/profile',
-    languageKey: 'Profil',
-    subMenu: false,
-    route: '/profile',
-    protected: true,
-    subMenuComponents: [],
-
-    icon: <FcBusinessman />,
-  },
-  {
     id: '/admin',
     languageKey: 'admin',
     subMenu: true,
@@ -131,15 +140,6 @@ const MENU_CONSTANT = [
     ],
 
     icon: <FcHighPriority />,
-  },
-  {
-    id: '/login',
-    languageKey: 'Login',
-    subMenu: false,
-    route: '/signin',
-    subMenuComponents: [],
-
-    icon: <FcSafe />,
   },
 ];
 
