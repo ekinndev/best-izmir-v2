@@ -25,7 +25,7 @@ export async function getServerSideProps({ locale, ...ctx }) {
   if (session) {
     return {
       redirect: {
-        destination: '/profile',
+        destination: '/',
         permanent: false,
       },
     };
