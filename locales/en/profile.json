@@ -7,5 +7,8 @@
   "meetingIdLabel": "Meeting ID",
   "meetingButtonText": "Join",
   "meetingButtonLoadingText": "Loading...",
-  "meetingIdErrorMessage": "Meeting id can't be empty!"
+  "meetingIdErrorMessage": "Meeting id can't be empty!",
+  "addManuelButtonText": "Add Manuel Participant",
+  "name": "Name Surname",
+  "participantNameErrorMessage": "Participant name can't be empty!"
 }

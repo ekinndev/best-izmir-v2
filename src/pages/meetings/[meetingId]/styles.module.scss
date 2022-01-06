@@ -6,3 +6,9 @@
   height: 100%;
   flex-direction: column;
 }
+
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
