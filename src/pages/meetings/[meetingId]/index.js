@@ -180,7 +180,7 @@ const Meetings = () => {
           <Form.Item
             label={profileT('name')}
             name="participantName"
-            rules={[{ required: true, message: t('participantNameErrorMessage') }]}
+            rules={[{ required: true, message: profileT('participantNameErrorMessage') }]}
           >
             <Input />
           </Form.Item>
