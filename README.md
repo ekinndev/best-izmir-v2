@@ -135,6 +135,7 @@ This is an example of how to list things you need to use the software and how to
 - [x] Authentication
 - [x] i18n
 - [x] Optimize queries
+- [x] TypeScript
 - [ ] Dark Theme
 
 See the [open issues](https://github.com/ekinndev/best-izmir-v2/issues) for a full list of proposed features (and known issues).
@@ -170,7 +171,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@ekinndev](https://twitter.com/ekinndev) - me@ekinn.dev
+[@ekinndev](https://twitter.com/ekinndev) - me@ekinn.dev
 
 Project Link: [https://github.com/ekinndev/best-izmir-v2](https://github.com/ekinndev/best-izmir-v2)
 
