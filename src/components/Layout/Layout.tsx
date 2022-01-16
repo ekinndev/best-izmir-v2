@@ -5,13 +5,12 @@ import { Layout as ALayout, Menu, Switch, Row, Col } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-import { BsSun, BsMoon } from 'react-icons/bs';
 import { signOut, useSession } from 'next-auth/client';
 import Footer from './Footer/Footer';
 import MENU_CONSTANT from '../../constants/Menu';
 import LogoStyles from '../Logo/Logo.module.scss';
 import Logo from '../Logo/Logo';
-import { fetchUser, toggleTheme } from '../../store/slices/common';
+import { fetchUser } from '../../store/slices/common';
 import staticPages from '../../constants/Pages';
 import useWindowSize from '../../hooks/useWindowSize';
 import { useAppDispatch, useAppSelector } from '../../hooks/storeHooks';
@@ -21,12 +20,12 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
+  const [theme, setTheme] = useState<'light' | 'dark' | undefined>(undefined);
   const router = useRouter();
   const [session] = useSession();
   const selectedKeys = router.pathname.split('/').map(item => `/${item}`);
   const { Content, Sider } = ALayout;
   const { SubMenu } = Menu;
-  const theme = useAppSelector(state => state.common.theme);
   const loggedInUser = useAppSelector(state => state.common.userInfo);
   const dispatch = useAppDispatch();
   const [collapsed, setCollapsed] = useState(true);
@@ -39,10 +38,6 @@ const Layout = ({ children }: LayoutProps) => {
     setTimeout(() => {
       router.replace(router.pathname, undefined, { locale: router.locale === 'tr' ? 'en' : 'tr' });
     }, 200);
-  };
-
-  const toggleThemeHandler = () => {
-    dispatch(toggleTheme());
   };
 
   const onCollapse = (val: boolean) => {
@@ -60,6 +55,10 @@ const Layout = ({ children }: LayoutProps) => {
       router.events.off('routeChangeStart', handleRouteChange);
     };
   }, [router.events]);
+
+  useEffect(() => {
+    setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  }, []);
 
   const pageInfo = staticPages.find(info => info.page === router.pathname);
 
@@ -123,13 +122,6 @@ const Layout = ({ children }: LayoutProps) => {
             })}
             <Menu.Item>
               <Row justify="space-between">
-                <Switch
-                  size="default"
-                  defaultChecked={theme === 'dark'}
-                  onChange={toggleThemeHandler}
-                  unCheckedChildren={<BsSun />}
-                  checkedChildren={<BsMoon />}
-                />
                 <Switch
                   size="default"
                   defaultChecked={i18n.language === 'en'}
@@ -197,17 +189,6 @@ const Layout = ({ children }: LayoutProps) => {
               );
             })}
           </Menu>
-          <Row justify="center">
-            <Col>
-              <Switch
-                size="default"
-                defaultChecked={theme === 'dark'}
-                onChange={toggleThemeHandler}
-                unCheckedChildren={<BsSun />}
-                checkedChildren={<BsMoon />}
-              />
-            </Col>
-          </Row>
         </Sider>
       )}
       <ALayout className="main-layout">

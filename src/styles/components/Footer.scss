@@ -1,8 +1,8 @@
 .footer-menu {
   background: #fff !important;
   margin-top: 2rem;
-  &.dark {
-    background: rgb(0, 21, 41) !important;
+  @media (prefers-color-scheme: dark) {
+    background: #000 !important;
   }
 
   .social_media {
@@ -12,6 +12,9 @@
     a {
       text-decoration: none;
       color: #333;
+      @media (prefers-color-scheme: dark) {
+        color: hsla(0, 0%, 100%, 0.85) !important;
+      }
     }
   }
   .copyright_text {
