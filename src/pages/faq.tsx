@@ -24,7 +24,6 @@ const Faq = () => {
           </Panel>
         ))}
       </Collapse>
-      ,
     </Layout>
   );
 };
