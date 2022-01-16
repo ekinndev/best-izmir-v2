@@ -1,0 +1,28 @@
+.tabContent,
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.tabContent {
+  flex-direction: column;
+}
+
+.logo {
+  background-color: white;
+  border-radius: 1rem;
+}
+
+.buttonContainer {
+  Button {
+    background-color: orange;
+    border-color: white;
+  }
+
+  Button:hover {
+    background-color: rgb(255, 136, 0);
+    border-color: white;
+  }
+}
