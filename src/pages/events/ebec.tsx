@@ -4,14 +4,22 @@ import { GetServerSideProps } from 'next';
 import ebecLogo from '../../assets/logos/ebec.svg';
 import styles from '../events/Ebec.module.scss';
 import Image from 'next/image';
-import { Tabs, Button } from 'antd';
+import { Tabs, Button, Layout, Collapse } from 'antd';
+import { useTranslation } from 'next-i18next';
+import EBEC_FAQ from '../../constants/Ebecfaq';
+
 const { TabPane } = Tabs;
 
 const Ebec = () => {
+  const { Panel } = Collapse;
+  const { t } = useTranslation('ebec');
+
   return (
     <div className={styles.container}>
-      <div className={styles.logo}>
-        <Image src={ebecLogo} />
+      <div className={styles.logoContainer}>
+        <div className={styles.logo}>
+          <Image src={ebecLogo} />
+        </div>
       </div>
 
       <Tabs className={styles.tabStyle} defaultActiveKey="1" centered>
@@ -30,7 +38,13 @@ const Ebec = () => {
           Content of Tab Pane 3
         </TabPane>
         <TabPane className={styles.tabContent} tab="S.S.S." key="4">
-          Content of Tab Pane 4
+          <Collapse>
+            {EBEC_FAQ.map(question => (
+              <Panel className={styles.faqPanel} header={t(question.questionKey)} key={question.questionKey}>
+                <p>{t(question.answerKey)}</p>
+              </Panel>
+            ))}
+          </Collapse>
         </TabPane>
       </Tabs>
     </div>
@@ -38,7 +52,7 @@ const Ebec = () => {
 };
 
 export const getServerSideProps: GetServerSideProps = async ({ locale = 'en' }) => ({
-  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages'])) },
+  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages', 'ebec'])) },
 });
 
 export default Ebec;
