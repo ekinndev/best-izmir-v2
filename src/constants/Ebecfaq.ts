@@ -1,9 +1,9 @@
-interface FQuestion {
+interface EbecQuestion {
   questionKey: string;
   answerKey: string;
 }
 
-const EBEC_FAQ: FQuestion[] = [
+const EBEC_FAQ: EbecQuestion[] = [
   {
     questionKey: 'q1',
     answerKey: 'a1',

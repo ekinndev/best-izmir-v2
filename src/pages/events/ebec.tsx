@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next';
 import ebecLogo from '../../assets/logos/ebec.svg';
 import styles from '../events/Ebec.module.scss';
 import Image from 'next/image';
-import { Tabs, Button, Layout, Collapse } from 'antd';
+import { Tabs, Button, Collapse } from 'antd';
 import { useTranslation } from 'next-i18next';
 import EBEC_FAQ from '../../constants/Ebecfaq';
 
