@@ -14,5 +14,14 @@
   "meetingsCreatePageTitle": "Create Meeting",
   "meetingIdPageTitle": "Meeting",
   "faqPageTitle": "FAQ",
-  "loginPageTitle": "Sign in"
+  "loginPageTitle": "Sign in",
+  "homePageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Homepage",
+  "aboutUsPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir About Us Page",
+  "ebecPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local Event EBEC Page",
+  "mwIzmirPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local Event Motivational Weekend Page",
+  "yfsPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local Event YFS Page",
+  "beinciPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local Event beinci Page",
+  "autumnCoursePageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local Event Autumn Course Page",
+  "faqPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Local FAQ Page",
+  "contactPageDescription": "BEST Board of European Students of Technology Local Group Of Izmir Contact Page"
 }

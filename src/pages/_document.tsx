@@ -11,11 +11,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name="keywords" content="asas" />
-          <meta name="robots" content="index, follow" />
-          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
-          <meta name="language" content="English" />
-          <meta name="author" content="Best Izmir" />
           <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.3/antd.dark.min.css"

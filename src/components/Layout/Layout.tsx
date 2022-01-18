@@ -74,6 +74,20 @@ const Layout = ({ children }: LayoutProps) => {
     <ALayout>
       {pageInfo && (
         <Head>
+          <meta
+            name="title"
+            content={`${pagesTranslation.t(pageInfo.titleKey)} | ${pagesTranslation.t('bestIzmir')}`}
+          />
+          {pageInfo.descriptionKey && <meta name="description" content={pagesTranslation.t(pageInfo.descriptionKey)} />}
+          <meta
+            name="keywords"
+            content="BEST,Izmir,BEST Izmir,Board of european students of technology,ebec,yfs,mw izmir,beinci,best courses,avrupe teknoloji öğrencileri topluluğu,ege üniversitesi,ege university"
+          />
+          <meta name="robots" content="index, follow" />
+          <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+          <meta name="language" content="English" />
+          <meta name="author" content="Best Izmir" />
+
           <title>{`${pagesTranslation.t(pageInfo.titleKey)} | ${pagesTranslation.t('bestIzmir')}`}</title>
         </Head>
       )}
