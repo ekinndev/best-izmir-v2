@@ -34,25 +34,25 @@ export const homePageEvents: homePageEventsType[] = [
   {
     titleKey: 'events.mwIzmirTitle',
     contentKey: 'events.mwIzmirContent',
-    link: '/events/ebec',
+    link: '/events/mw-izmir',
     imageLink: 'https://via.placeholder.com/464x150',
   },
   {
     titleKey: 'events.yfsTitle',
     contentKey: 'events.yfsContent',
-    link: '/events/ebec',
+    link: '/events/yfs',
     imageLink: 'https://via.placeholder.com/464x150',
   },
   {
     titleKey: 'events.beinciTitle',
     contentKey: 'events.beinciContent',
-    link: '/events/ebec',
+    link: '/events/beinci',
     imageLink: 'https://via.placeholder.com/464x150',
   },
   {
     titleKey: 'events.courseTitle',
     contentKey: 'events.courseContent',
-    link: '/events/ebec',
+    link: '/events/autumn-course',
     imageLink: courseLogo,
   },
 ];
