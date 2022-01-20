@@ -130,8 +130,8 @@ const Ebec = () => {
         </TabPane>
         <TabPane className={styles.tabContent} tab={t('previousEbecs')} key="3">
           <Card>
-            {placeholders.map(image => (
-              <Card.Grid>
+            {placeholders.map((image, i) => (
+              <Card.Grid key={i}>
                 <img src={image} alt="prev-ebec-pl-img" />
               </Card.Grid>
             ))}
