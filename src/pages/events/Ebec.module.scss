@@ -30,7 +30,7 @@
 }
 
 .explanationText {
-  max-width: 800px;
+  max-width: 100%;
 }
 .cardImageStyle {
   width: 300px;
@@ -55,16 +55,6 @@
 .secondCarouselElement {
   background-image: url(../../assets/ebec/caseStudy.jpg);
 }
-.slick-prev:before {
-  content: '<';
-  color: red;
-  font-size: 30px;
-}
-.slick-next:before {
-  content: '>';
-  color: red;
-  font-size: 30px;
-}
 
 .ebecPyramidImage {
   max-width: 400px;
@@ -74,6 +64,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  transition: background-color 0.3s;
 }
 
 .judgeCard:hover {
