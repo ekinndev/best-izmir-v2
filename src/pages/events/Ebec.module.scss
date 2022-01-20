@@ -26,5 +26,21 @@
 }
 
 .faqPanel {
-  min-width: 60rem;
+  max-width: 610.42px;
+}
+
+.explanationText {
+  max-width: 610.42px;
+}
+.cardImageStyle {
+  width: 300px;
+  height: 300px;
+}
+.formColumn {
+  border: 1px groove white;
+  padding-left: 5% auto;
+}
+.fromRow {
+  display: flex;
+  justify-content: space-around;
 }
