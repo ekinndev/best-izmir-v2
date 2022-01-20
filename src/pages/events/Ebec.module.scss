@@ -30,17 +30,59 @@
 }
 
 .explanationText {
-  max-width: 610.42px;
+  max-width: 800px;
 }
 .cardImageStyle {
   width: 300px;
   height: 300px;
 }
-.formColumn {
-  border: 1px groove white;
-  padding-left: 5% auto;
+
+.comptetitionExpl {
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.493);
+  backdrop-filter: blur(4px);
 }
-.fromRow {
+.firstCarouselElement,
+.secondCarouselElement {
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.firstCarouselElement {
+  background-image: url(../../assets/ebec/innovativeDesign.jpg);
+}
+.secondCarouselElement {
+  background-image: url(../../assets/ebec/caseStudy.jpg);
+}
+.slick-prev:before {
+  content: '<';
+  color: red;
+  font-size: 30px;
+}
+.slick-next:before {
+  content: '>';
+  color: red;
+  font-size: 30px;
+}
+
+.ebecPyramidImage {
+  max-width: 400px;
   display: flex;
-  justify-content: space-around;
+}
+.judgeCard {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.judgeCard:hover {
+  background-color: gray;
+}
+.judgeCardImg {
+  max-width: 250px;
+  margin: 5px;
+}
+.judgeInformation {
+  margin: auto 50px auto 50px;
 }
