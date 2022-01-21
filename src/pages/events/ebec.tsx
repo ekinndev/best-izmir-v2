@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { GetServerSideProps } from 'next';
 import ebecLogo from '../../assets/logos/ebec.svg';
@@ -68,9 +68,7 @@ const Ebec = () => {
     <ALayout>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <div className={styles.logo}>
-            <Image src={ebecLogo} />
-          </div>
+          <Image src={ebecLogo} />
         </div>
 
         <Row justify="center">
