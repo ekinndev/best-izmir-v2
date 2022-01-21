@@ -1,46 +1,41 @@
-import React from 'react';
-/*import { GetServerSideProps } from 'next';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';*/
 
 import { Form, Input, Row, Col, Divider } from 'antd';
 
 const ApplyFrom = ({ contestant }: { contestant: string }) => {
+  const { t } = useTranslation('ebec');
   return (
     <div>
       <Divider orientation="center">{contestant}</Divider>
       <Row gutter={32}>
         <Col className="gutter-row" span={12}>
-          <Form.Item label="İsim:" rules={[{ required: true }]}>
+          <Form.Item label={t('formName')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
         </Col>
         <Col className="gutter-row" span={12}>
-          <Form.Item label="Soyisim:" rules={[{ required: true }]}>
+          <Form.Item label={t('formSurname')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
         </Col>
       </Row>
-      <Form.Item label="Öğrenci Numarası:" rules={[{ required: true }]}>
+      <Form.Item label={t('formStudentId')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Email:" rules={[{ required: true }]}>
+      <Form.Item label={t('formEmail')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Telefon Numarası:" rules={[{ required: true }]}>
+      <Form.Item label={t('formPhoneNumber')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Fakülte:" rules={[{ required: true }]}>
+      <Form.Item label={t('formFaculty')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label="Bölüm:" rules={[{ required: true }]}>
+      <Form.Item label={t('formMajor')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
     </div>
   );
 };
 
-/*export const getServerSideProps: GetServerSideProps = async ({ locale = 'en' }) => ({
-  props: { ...(await serverSideTranslations(locale, ['common', 'menu', 'pages', 'ebec'])) },
-});*/
 export default ApplyFrom;
