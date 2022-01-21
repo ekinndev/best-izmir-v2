@@ -86,7 +86,12 @@ export default function Home({ instagramFeedData }: HomeProps) {
           {homePagePartners.map(partner => (
             <Col sm={{ span: 6 }} md={{ span: 4 }} lg={{ span: 4 }} key={partner.id}>
               <a href={partner.externalLink} target="_blank" rel="noopener noreferrer">
-                <Image src={partner.imageLink} width={partner.width} height={partner.height} />
+                <Image
+                  src={partner.imageLink}
+                  width={partner.width}
+                  height={partner.height}
+                  alt={partner.partnerName}
+                />
               </a>
             </Col>
           ))}
@@ -106,6 +111,7 @@ export default function Home({ instagramFeedData }: HomeProps) {
                       bordered
                       cover={
                         // eslint-disable-next-line react/jsx-wrap-multilines
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                           src={post.media_url}
                           alt={post.caption.slice(0, 20)}
@@ -117,7 +123,7 @@ export default function Home({ instagramFeedData }: HomeProps) {
                       <Meta
                         avatar={
                           // eslint-disable-next-line max-len
-                          <Avatar src="/images/logo.webp" />
+                          <Avatar src="/images/logo.webp" alt="Best Logo" />
                         }
                         title={`@${post.username}`}
                       />
