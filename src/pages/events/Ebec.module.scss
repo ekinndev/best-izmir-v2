@@ -9,10 +9,6 @@
   flex-direction: column;
 }
 
-.logo {
-  border-radius: 1rem;
-}
-
 .buttonContainer {
   Button {
     background-color: orange;
@@ -30,11 +26,8 @@
 }
 
 .explanationText {
-  max-width: 100%;
-}
-.cardImageStyle {
-  width: 300px;
-  height: 300px;
+  max-width: 50rem;
+  width: 100%;
 }
 
 .comptetitionExpl {
