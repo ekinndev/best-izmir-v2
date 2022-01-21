@@ -23,7 +23,8 @@ import { useTranslation } from 'next-i18next';
 import EBEC_FAQ from '../../constants/Ebecfaq';
 import ApplyForm from '../../components/Ebec/EbecForm';
 import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
-
+import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
+import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
 const { TabPane } = Tabs;
 const Ebec = () => {
   const { Panel } = Collapse;
@@ -31,10 +32,10 @@ const Ebec = () => {
   const { t } = useTranslation('ebec');
   let placeholders = [
     'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/500',
+    'https://via.placeholder.com/250x100',
+    'https://via.placeholder.com/300',
+    'https://via.placeholder.com/1000',
+    'https://via.placeholder.com/800',
     'https://via.placeholder.com/500',
   ];
 
@@ -98,12 +99,16 @@ const Ebec = () => {
 
                   <Carousel autoplay>
                     <div className={styles.firstCarouselElement}>
+                      <Image src={innDesImg} layout="fill" objectFit="cover" />
+
                       <div className={styles.comptetitionExpl}>
                         <h3>{t('innovativeDesignTitle')}</h3>
                         <p>{t('innovativeDesignText')}</p>
                       </div>
                     </div>
                     <div className={styles.secondCarouselElement}>
+                      <Image src={caseStdyImg} layout="fill" objectFit="cover" />
+
                       <div className={styles.comptetitionExpl}>
                         <h3>{t('caseStudyTitle')}</h3>
                         <p>{t('caseStudyText')}</p>
@@ -114,12 +119,14 @@ const Ebec = () => {
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('howToApplyTitle')} key="2">
                 <p className={styles.explanationText}>{t('howToApplyText')}</p>
-                <Form layout="vertical" className={styles.applyForm}>
+                <div className={styles.formSteps}>
                   <Steps current={current}>
                     {steps.map(item => (
                       <Step key={item.title} title={item.title} />
                     ))}
                   </Steps>
+                </div>
+                <Form layout="vertical" className={styles.applyForm}>
                   <div className="steps-content">{steps[current].content}</div>
                   <div className="steps-action">
                     {current < steps.length - 1 && (
@@ -146,13 +153,13 @@ const Ebec = () => {
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('previousEbecs')} key="3">
                 <AntImage.PreviewGroup>
-                  <div className={styles.pastEbecImgContainer}>
+                  <Row justify="center" gutter={[24, 24]}>
                     {placeholders.map((image, i) => (
-                      <div key={i}>
-                        <AntImage src={image} />
-                      </div>
+                      <Col>
+                        <AntImage className={styles.prevEbecImg} key={i} src={image} width={500} height={500} />
+                      </Col>
                     ))}
-                  </div>
+                  </Row>
                 </AntImage.PreviewGroup>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('faqTitle')} key="4">
@@ -168,7 +175,7 @@ const Ebec = () => {
                 <div>
                   <div className={styles.judgeCard}>
                     <span className={styles.judgeCardImg}>
-                      <img src="https://via.placeholder.com/250" alt="judge-img" />
+                      <AntImage src="https://via.placeholder.com/250" />
                     </span>
                     <div className={styles.judgeInformation}>
                       <h2>Unvan İsim Soyisim</h2>
@@ -179,7 +186,7 @@ const Ebec = () => {
                   <Divider />
                   <div className={styles.judgeCard}>
                     <span className={styles.judgeCardImg}>
-                      <img src="https://via.placeholder.com/250" alt="judge-img" />
+                      <AntImage src="https://via.placeholder.com/250" />
                     </span>
                     <div className={styles.judgeInformation}>
                       <h2>Unvan İsim Soyisim</h2>
@@ -190,7 +197,7 @@ const Ebec = () => {
                   <Divider />
                   <div className={styles.judgeCard}>
                     <span className={styles.judgeCardImg}>
-                      <img src="https://via.placeholder.com/250" alt="judge-img" />
+                      <AntImage src="https://via.placeholder.com/250" />
                     </span>
                     <div className={styles.judgeInformation}>
                       <h2>Unvan İsim Soyisim</h2>
@@ -201,7 +208,7 @@ const Ebec = () => {
                   <Divider />
                   <div className={styles.judgeCard}>
                     <span className={styles.judgeCardImg}>
-                      <img src="https://via.placeholder.com/250" alt="judge-img" />
+                      <AntImage src="https://via.placeholder.com/250" />
                     </span>
                     <div className={styles.judgeInformation}>
                       <h2>Unvan İsim Soyisim</h2>

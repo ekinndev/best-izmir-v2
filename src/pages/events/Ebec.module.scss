@@ -5,16 +5,17 @@
   align-items: center;
 }
 
+.formSteps {
+  width: inherit;
+  max-width: 60rem;
+}
+.tabStyle {
+  margin-left: 1rem;
+}
 .tabContent {
   flex-direction: column;
 }
-.pastEbecImgContainer {
-  display: flex;
-  flex-direction: row;
-  div {
-    margin: 1rem;
-  }
-}
+
 .buttonContainer {
   Button {
     background-color: orange;
@@ -39,23 +40,28 @@
   }
 }
 
+.applyForm {
+  width: inherit;
+  max-width: 50rem;
+}
+
 .comptetitionExpl {
+  width: 100%;
+  height: 100%;
   padding: 5%;
   background: rgba(0, 0, 0, 0.493);
   backdrop-filter: blur(0.25rem);
 }
 .firstCarouselElement,
 .secondCarouselElement {
-  height: 100%;
-  background-position: center;
+  position: relative;
+  height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-.firstCarouselElement {
-  background-image: url(../../assets/ebec/innovativeDesign.jpg);
-}
-.secondCarouselElement {
-  background-image: url(../../assets/ebec/caseStudy.jpg);
 }
 
 .ebecPyramidImage {
@@ -77,4 +83,8 @@
 }
 .judgeInformation {
   margin: auto 3rem auto 3rem;
+}
+
+.prevEbecImg {
+  object-fit: contain;
 }
