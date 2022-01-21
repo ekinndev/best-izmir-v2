@@ -22,7 +22,7 @@
 }
 
 .faqPanel {
-  max-width: 610.42px;
+  max-width: 38.27625rem;
 }
 
 .explanationText {
@@ -33,7 +33,7 @@
 .comptetitionExpl {
   padding: 5%;
   background: rgba(0, 0, 0, 0.493);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(0.25rem);
 }
 .firstCarouselElement,
 .secondCarouselElement {
@@ -50,7 +50,7 @@
 }
 
 .ebecPyramidImage {
-  max-width: 400px;
+  max-width: 25rem;
   display: flex;
 }
 .judgeCard {
@@ -61,12 +61,11 @@
 }
 
 .judgeCard:hover {
-  background-color: gray;
+  background-color: rgba(128, 128, 128, 0.342);
 }
 .judgeCardImg {
-  max-width: 250px;
-  margin: 5px;
+  margin: 0.5rem;
 }
 .judgeInformation {
-  margin: auto 50px auto 50px;
+  margin: auto 3rem auto 3rem;
 }
