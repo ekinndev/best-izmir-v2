@@ -17,6 +17,7 @@ import {
   Divider,
   Row,
   Col,
+  Image as AntImage,
 } from 'antd';
 import { useTranslation } from 'next-i18next';
 import EBEC_FAQ from '../../constants/Ebecfaq';
@@ -144,13 +145,15 @@ const Ebec = () => {
                 </Form>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('previousEbecs')} key="3">
-                <Card>
-                  {placeholders.map((image, i) => (
-                    <Card.Grid key={i}>
-                      <img src={image} alt="prev-ebec-pl-img" />
-                    </Card.Grid>
-                  ))}
-                </Card>
+                <AntImage.PreviewGroup>
+                  <div className={styles.pastEbecImgContainer}>
+                    {placeholders.map((image, i) => (
+                      <div key={i}>
+                        <AntImage src={image} />
+                      </div>
+                    ))}
+                  </div>
+                </AntImage.PreviewGroup>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('faqTitle')} key="4">
                 <Collapse>
