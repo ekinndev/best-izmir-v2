@@ -25,10 +25,17 @@ import ApplyForm from '../../components/Ebec/EbecForm';
 import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
+
+interface StepType {
+  title: string;
+  content: JSX.Element;
+}
+
 const { TabPane } = Tabs;
 const Ebec = () => {
   const { Panel } = Collapse;
   const { Step } = Steps;
+
   const { t } = useTranslation('ebec');
   let placeholders = [
     'https://via.placeholder.com/500',
@@ -39,7 +46,7 @@ const Ebec = () => {
     'https://via.placeholder.com/500',
   ];
 
-  const steps = [
+  const steps: StepType[] = [
     {
       title: t('firstContestantTitle'),
       content: <ApplyForm contestant={t('firstContestantTitle')} />,
