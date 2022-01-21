@@ -155,7 +155,7 @@ const Ebec = () => {
                 <AntImage.PreviewGroup>
                   <Row justify="center" gutter={[24, 24]}>
                     {placeholders.map((image, i) => (
-                      <Col>
+                      <Col key={1}>
                         <AntImage className={styles.prevEbecImg} key={i} src={image} width={500} height={500} />
                       </Col>
                     ))}
