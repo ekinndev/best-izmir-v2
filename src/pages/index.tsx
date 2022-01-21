@@ -71,7 +71,7 @@ export default function Home({ instagramFeedData }: HomeProps) {
                 <Card
                   title={t(event.titleKey)}
                   bordered
-                  cover={<Image src={event.imageLink} width={464} height={150} />}
+                  cover={<Image src={event.imageLink} width={464} height={150} alt={t(event.titleKey)} />}
                 >
                   {t(event.titleKey)}
                 </Card>
