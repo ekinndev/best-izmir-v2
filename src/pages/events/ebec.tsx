@@ -4,6 +4,7 @@ import { GetServerSideProps } from 'next';
 import ebecLogo from '../../assets/logos/ebec.svg';
 import styles from '../events/Ebec.module.scss';
 import Image from 'next/image';
+import { AiOutlineDownload } from 'react-icons/ai';
 import {
   Layout as ALayout,
   Tabs,
@@ -25,6 +26,7 @@ import ApplyForm from '../../components/Ebec/EbecForm';
 import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
+import axios from 'axios';
 
 interface StepType {
   title: string;
@@ -66,6 +68,8 @@ const Ebec = () => {
   ];
 
   const [current, setCurrent] = useState(0);
+  const [formData, setFormData] = useState({});
+  const [loading, setLoading] = useState(false);
   const next = () => {
     setCurrent(current + 1);
   };
@@ -73,11 +77,34 @@ const Ebec = () => {
     setCurrent(current - 1);
   };
 
+  const [form] = Form.useForm();
+
+  const handleNextStep = async () => {
+    await form.validateFields();
+    setFormData(prevState => ({ ...prevState, [current]: form.getFieldsValue() }));
+    form.resetFields();
+    next();
+  };
+  const applyForm = async () => {
+    await form.validateFields();
+
+    const payload = { ...formData, [current]: form.getFieldsValue() };
+
+    try {
+      setLoading(true);
+      await axios.post('/api/ebec-mail', payload);
+      message.success(t('applySuccessText'));
+    } catch (e) {
+      message.error(t('errorMessageText'));
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <ALayout>
       <div className={styles.container}>
         <div className={styles.logoContainer}>
-          <Image src={ebecLogo} />
+          <Image src={ebecLogo} alt="ebec-logo" />
         </div>
 
         <Row justify="center">
@@ -99,14 +126,14 @@ const Ebec = () => {
                   <p>{t('finalStepText')}</p>
                 </div>
                 <div className={styles.ebecPyramidImage}>
-                  <Image src={EbecPyrmaidImage} />
+                  <Image src={EbecPyrmaidImage} alt="ebec-pyramid-img" />
                 </div>
                 <div className={styles.explanationText}>
                   <h2>{t('ebecCategoriesTitle')}</h2>
 
                   <Carousel autoplay>
                     <div className={styles.firstCarouselElement}>
-                      <Image src={innDesImg} layout="fill" objectFit="cover" />
+                      <Image src={innDesImg} layout="fill" objectFit="cover" alt="innovative-design-img" />
 
                       <div className={styles.comptetitionExpl}>
                         <h3>{t('innovativeDesignTitle')}</h3>
@@ -114,7 +141,7 @@ const Ebec = () => {
                       </div>
                     </div>
                     <div className={styles.secondCarouselElement}>
-                      <Image src={caseStdyImg} layout="fill" objectFit="cover" />
+                      <Image src={caseStdyImg} layout="fill" objectFit="cover" alt="case-study-img" />
 
                       <div className={styles.comptetitionExpl}>
                         <h3>{t('caseStudyTitle')}</h3>
@@ -122,30 +149,42 @@ const Ebec = () => {
                       </div>
                     </div>
                   </Carousel>
+
+                  <Button
+                    style={{ marginTop: '1rem' }}
+                    block
+                    href="/booklet.pdf"
+                    type="primary"
+                    icon={<AiOutlineDownload />}
+                  >
+                    {t('downlaodBookletText')}
+                  </Button>
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('howToApplyTitle')} key="2">
-                <p className={styles.explanationText}>{t('howToApplyText')}</p>
-                <div className={styles.formSteps}>
-                  <Steps current={current}>
-                    {steps.map(item => (
-                      <Step key={item.title} title={item.title} />
-                    ))}
-                  </Steps>
-                </div>
-                <Form layout="vertical" className={styles.applyForm}>
+                <Form layout="vertical" className={styles.applyForm} form={form}>
+                  <p className={styles.explanationText}>{t('howToApplyText')}</p>
+
+                  <div className={styles.formSteps}>
+                    <Steps current={current}>
+                      {steps.map(item => (
+                        <Step key={item.title} title={item.title} />
+                      ))}
+                    </Steps>
+                  </div>
+
                   <div className="steps-content">{steps[current].content}</div>
                   <div className="steps-action">
                     {current < steps.length - 1 && (
                       <span className={styles.buttonContainer}>
-                        <Button type="primary" onClick={() => next()}>
+                        <Button type="primary" onClick={handleNextStep}>
                           {t('nextStepButtonText')}
                         </Button>
                       </span>
                     )}
                     {current === steps.length - 1 && (
                       <span className={styles.buttonContainer}>
-                        <Button type="primary" onClick={() => message.success('Processing complete!')}>
+                        <Button type="primary" onClick={applyForm} loading={loading} disabled={loading}>
                           {t('applyButtonText')}
                         </Button>
                       </span>

@@ -9,29 +9,29 @@ const ApplyFrom = ({ contestant }: { contestant: string }) => {
       <Divider orientation="center">{contestant}</Divider>
       <Row gutter={32}>
         <Col className="gutter-row" span={12}>
-          <Form.Item label={t('formName')} rules={[{ required: true }]}>
+          <Form.Item name="Name" label={t('formName')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
         </Col>
         <Col className="gutter-row" span={12}>
-          <Form.Item label={t('formSurname')} rules={[{ required: true }]}>
+          <Form.Item name="Surname" label={t('formSurname')} rules={[{ required: true }]}>
             <Input />
           </Form.Item>
         </Col>
       </Row>
-      <Form.Item label={t('formStudentId')} rules={[{ required: true }]}>
+      <Form.Item name="StudentId" label={t('formStudentId')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label={t('formEmail')} rules={[{ required: true }]}>
+      <Form.Item name="Email" label={t('formEmail')} rules={[{ required: true, type: 'email' }]}>
         <Input />
       </Form.Item>
-      <Form.Item label={t('formPhoneNumber')} rules={[{ required: true }]}>
+      <Form.Item name="PhoneNumber" label={t('formPhoneNumber')} rules={[{ required: true, max: 12 }]}>
         <Input />
       </Form.Item>
-      <Form.Item label={t('formFaculty')} rules={[{ required: true }]}>
+      <Form.Item name="Faculty" label={t('formFaculty')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
-      <Form.Item label={t('formMajor')} rules={[{ required: true }]}>
+      <Form.Item name="Major" label={t('formMajor')} rules={[{ required: true }]}>
         <Input />
       </Form.Item>
     </div>
