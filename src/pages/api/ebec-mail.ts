@@ -32,7 +32,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   `;
 
   const msg = {
-    to: 'yekta.yuksel@gmail.com',
+    to: 'mmmkaraomeroglu@gmail.com',
     from: 'contact@em3543.bestizmirege.org',
     subject: `EBEC Başvuru`,
     text: payload,

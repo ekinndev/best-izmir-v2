@@ -26,6 +26,7 @@ import ApplyForm from '../../components/Ebec/EbecForm';
 import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
+import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
 import axios from 'axios';
 
 interface StepType {
@@ -197,17 +198,6 @@ const Ebec = () => {
                   </div>
                 </Form>
               </TabPane>
-              <TabPane className={styles.tabContent} tab={t('previousEbecs')} key="3">
-                <AntImage.PreviewGroup>
-                  <Row justify="center" gutter={[24, 24]}>
-                    {placeholders.map((image, i) => (
-                      <Col key={1}>
-                        <AntImage className={styles.prevEbecImg} key={i} src={image} width={500} height={500} />
-                      </Col>
-                    ))}
-                  </Row>
-                </AntImage.PreviewGroup>
-              </TabPane>
               <TabPane className={styles.tabContent} tab={t('faqTitle')} key="4">
                 <Collapse>
                   {EBEC_FAQ.map(question => (
@@ -264,7 +254,11 @@ const Ebec = () => {
                   </div>
                 </div>
               </TabPane>
-              <TabPane className={styles.tabContent} tab="Takımımız" key="6"></TabPane>
+              <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6">
+                <div>
+                  <Image src={karsiyakaKollektif} alt="karsiyaka-kollektif-img" />
+                </div>
+              </TabPane>
             </Tabs>
           </Col>
         </Row>
