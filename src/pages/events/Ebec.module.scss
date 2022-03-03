@@ -1,0 +1,91 @@
+.tabContent,
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formSteps {
+  width: inherit;
+  max-width: 60rem;
+}
+.tabStyle {
+  margin-left: 1rem;
+}
+.tabContent {
+  flex-direction: column;
+}
+
+.buttonContainer {
+  Button {
+    background-color: orange;
+    border-color: transparent;
+  }
+
+  Button:hover {
+    background-color: rgb(255, 136, 0);
+    border-color: transparent;
+  }
+}
+
+.faqPanel {
+  max-width: 38.27625rem;
+}
+
+.explanationText {
+  max-width: 50rem;
+  width: 100%;
+  h2 {
+    margin: 1rem auto;
+  }
+}
+
+.applyForm {
+  width: inherit;
+  max-width: 50rem;
+}
+
+.comptetitionExpl {
+  width: 100%;
+  height: 100%;
+  padding: 5%;
+  background: rgba(0, 0, 0, 0.493);
+  backdrop-filter: blur(0.25rem);
+}
+.firstCarouselElement,
+.secondCarouselElement {
+  position: relative;
+  height: inherit;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ebecPyramidImage {
+  max-width: 25rem;
+  display: flex;
+}
+.judgeCard {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  transition: background-color 0.3s;
+}
+
+.judgeCard:hover {
+  background-color: rgba(128, 128, 128, 0.342);
+}
+.judgeCardImg {
+  margin: 0.5rem;
+  max-width: 250px;
+}
+.judgeInformation {
+  margin: auto 3rem auto 3rem;
+}
+
+.prevEbecImg {
+  object-fit: contain;
+}
