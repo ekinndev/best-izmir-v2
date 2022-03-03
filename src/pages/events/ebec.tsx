@@ -27,6 +27,8 @@ import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
 import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
+import erdincAltunImg from '../../assets/ebec/erdinc-altun-img.jpg';
+import nuriAzbarImg from '../../assets/ebec/nuri-azbar-img.jpg';
 import axios from 'axios';
 
 interface StepType {
@@ -207,49 +209,28 @@ const Ebec = () => {
                   ))}
                 </Collapse>
               </TabPane>
-              <TabPane className={styles.tabContent} tab="Jürilerimiz" key="5">
+              <TabPane className={styles.tabContent} tab={t('judgesTitle')} key="5">
                 <div>
+                  <Divider />
                   <div className={styles.judgeCard}>
-                    <span className={styles.judgeCardImg}>
-                      <AntImage src="https://via.placeholder.com/250" />
-                    </span>
+                    <div className={styles.judgeCardImg}>
+                      <Image className={styles.judgeImg} src={erdincAltunImg} alt="erdinc-altun-image" />
+                    </div>
                     <div className={styles.judgeInformation}>
-                      <h2>Unvan İsim Soyisim</h2>
-                      <p>Bölüm</p>
-                      <a href="">Kişisel Site</a>
+                      <h2>Erdinç Altun</h2>
+                      <p>Environmental Engineering</p>
+                      <a href="https://www.linkedin.com/in/erdin%C3%A7-altun-9685054a">LinkedIn</a>
                     </div>
                   </div>
                   <Divider />
                   <div className={styles.judgeCard}>
-                    <span className={styles.judgeCardImg}>
-                      <AntImage src="https://via.placeholder.com/250" />
-                    </span>
-                    <div className={styles.judgeInformation}>
-                      <h2>Unvan İsim Soyisim</h2>
-                      <p>Bölüm</p>
-                      <a href="">Kişisel Site</a>
+                    <div className={styles.judgeCardImg}>
+                      <Image className={styles.judgeImg} src={nuriAzbarImg} alt="nuri-azbar-img" />
                     </div>
-                  </div>
-                  <Divider />
-                  <div className={styles.judgeCard}>
-                    <span className={styles.judgeCardImg}>
-                      <AntImage src="https://via.placeholder.com/250" />
-                    </span>
                     <div className={styles.judgeInformation}>
-                      <h2>Unvan İsim Soyisim</h2>
-                      <p>Bölüm</p>
-                      <a href="">Kişisel Site</a>
-                    </div>
-                  </div>
-                  <Divider />
-                  <div className={styles.judgeCard}>
-                    <span className={styles.judgeCardImg}>
-                      <AntImage src="https://via.placeholder.com/250" />
-                    </span>
-                    <div className={styles.judgeInformation}>
-                      <h2>Unvan İsim Soyisim</h2>
-                      <p>Bölüm</p>
-                      <a href="">Kişisel Site</a>
+                      <h2>Prof. Dr. Nuri Azbar</h2>
+                      <p>Bioengineering</p>
+                      <a href="https://www.linkedin.com/in/nuri-azbar-96319a32/">LinkedIn</a>
                     </div>
                   </div>
                 </div>
