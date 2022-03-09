@@ -1,6 +1,6 @@
 import { useTranslation } from 'next-i18next';
 
-import { Form, Input, Row, Col, Divider } from 'antd';
+import { Form, Input, Row, Col, Divider, Select } from 'antd';
 
 const ApplyFrom = ({ contestant }: { contestant: string }) => {
   const { t } = useTranslation('ebec');
@@ -33,6 +33,12 @@ const ApplyFrom = ({ contestant }: { contestant: string }) => {
       </Form.Item>
       <Form.Item name="Major" label={t('formMajor')} rules={[{ required: true }]}>
         <Input />
+      </Form.Item>
+      <Form.Item name="CompetitionType" label={t('fromCompetitionTypeText')} rules={[{ required: true }]}>
+        <Select>
+          <Select.Option value="case-study">{t('caseStudyTitle')}</Select.Option>
+          <Select.Option value="innovative-design">{t('innovativeDesignTitle')}</Select.Option>
+        </Select>
       </Form.Item>
     </div>
   );
