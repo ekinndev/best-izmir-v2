@@ -29,7 +29,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   Email:${req.body?.[3]?.Email}<br/>
   Telefonu:${req.body?.[3]?.PhoneNumber}<br/>
   Bölüm:${req.body?.[3]?.Faculty} ${req.body?.[3]?.Major}<br/>
-  `;
+  Yarışma Tipi:${req.body?.CompetitionType}<br/>`;
 
   const msg = {
     to: 'mmmkaraomeroglu@gmail.com',
