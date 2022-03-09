@@ -33,10 +33,10 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   <strong>Email:</strong> ${req.body?.[3]?.Email}<br/>
   <strong>Telefonu:</strong> ${req.body?.[3]?.PhoneNumber}<br/>
   <strong>Bölüm:</strong> ${req.body?.[3]?.Faculty} ${req.body?.[3]?.Major}<br/>
-  <strong>Yarışma Tipi:</strong> ${req.body?.CompetitionType}<br/>`;
+  <strong>Yarışma Tipi:</strong> ${req.body[3]?.CompetitionType}<br/>`;
 
   const msg = {
-    to: 'yekta.yuksel@gmail.com',
+    to: 'mmmkaraomeroglu@gmail.com',
     from: 'contact@em3543.bestizmirege.org',
     subject: `EBEC Başvuru`,
     text: payload,
