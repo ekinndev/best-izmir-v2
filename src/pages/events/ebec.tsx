@@ -47,19 +47,19 @@ const Ebec = () => {
   const steps: StepType[] = [
     {
       title: t('firstContestantTitle'),
-      content: <ApplyForm contestant={t('firstContestantTitle')} />,
+      content: <ApplyForm contestant={t('firstContestantTitle')} showSelect={false} />,
     },
     {
       title: t('secondContestantTitle'),
-      content: <ApplyForm contestant={t('secondContestantTitle')} />,
+      content: <ApplyForm contestant={t('secondContestantTitle')} showSelect={false} />,
     },
     {
       title: t('thirdContestantTitle'),
-      content: <ApplyForm contestant={t('thirdContestantTitle')} />,
+      content: <ApplyForm contestant={t('thirdContestantTitle')} showSelect={false} />,
     },
     {
       title: t('fourthContestantTitle'),
-      content: <ApplyForm contestant={t('fourthContestantTitle')} />,
+      content: <ApplyForm contestant={t('fourthContestantTitle')} showSelect={true} />,
     },
   ];
 
