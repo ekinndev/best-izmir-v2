@@ -50,7 +50,11 @@
   height: 100%;
   padding: 5%;
   background: rgba(0, 0, 0, 0.493);
+  color: white !important;
   backdrop-filter: blur(0.25rem);
+  h3 {
+    color: white;
+  }
 }
 .firstCarouselElement,
 .secondCarouselElement {

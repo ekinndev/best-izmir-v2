@@ -29,6 +29,7 @@ import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
 import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
 import erdincAltunImg from '../../assets/ebec/erdinc-altun-img.jpg';
 import nuriAzbarImg from '../../assets/ebec/nuri-azbar-img.jpg';
+import ilkerErolImg from '../../assets/ebec/ilker-erol-img.jpg';
 import axios from 'axios';
 
 interface StepType {
@@ -42,31 +43,23 @@ const Ebec = () => {
   const { Step } = Steps;
 
   const { t } = useTranslation('ebec');
-  let placeholders = [
-    'https://via.placeholder.com/500',
-    'https://via.placeholder.com/250x100',
-    'https://via.placeholder.com/300',
-    'https://via.placeholder.com/1000',
-    'https://via.placeholder.com/800',
-    'https://via.placeholder.com/500',
-  ];
 
   const steps: StepType[] = [
     {
       title: t('firstContestantTitle'),
-      content: <ApplyForm contestant={t('firstContestantTitle')} />,
+      content: <ApplyForm contestant={t('firstContestantTitle')} showSelect={false} />,
     },
     {
       title: t('secondContestantTitle'),
-      content: <ApplyForm contestant={t('secondContestantTitle')} />,
+      content: <ApplyForm contestant={t('secondContestantTitle')} showSelect={false} />,
     },
     {
       title: t('thirdContestantTitle'),
-      content: <ApplyForm contestant={t('thirdContestantTitle')} />,
+      content: <ApplyForm contestant={t('thirdContestantTitle')} showSelect={false} />,
     },
     {
       title: t('fourthContestantTitle'),
-      content: <ApplyForm contestant={t('fourthContestantTitle')} />,
+      content: <ApplyForm contestant={t('fourthContestantTitle')} showSelect={true} />,
     },
   ];
 
@@ -233,6 +226,18 @@ const Ebec = () => {
                       <a href="https://www.linkedin.com/in/nuri-azbar-96319a32/">LinkedIn</a>
                     </div>
                   </div>
+                  <Divider />
+                  <div className={styles.judgeCard}>
+                    <div className={styles.judgeCardImg}>
+                      <Image className={styles.judgeImg} src={ilkerErolImg} alt="ilker-erol-image" />
+                    </div>
+                    <div className={styles.judgeInformation}>
+                      <h2>İlker Erol</h2>
+                      <p>Environmental Engineering</p>
+                      <a href="https://www.linkedin.com/in/erol-ilker-8938a137/">LinkedIn</a>
+                    </div>
+                  </div>
+                  <Divider />
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6">
