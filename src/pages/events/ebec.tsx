@@ -30,6 +30,8 @@ import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
 import erdincAltunImg from '../../assets/ebec/erdinc-altun-img.jpg';
 import nuriAzbarImg from '../../assets/ebec/nuri-azbar-img.jpg';
 import ilkerErolImg from '../../assets/ebec/ilker-erol-img.jpg';
+import sinemToktayImg from '../../assets/ebec/sinem-toktay-img.jpg';
+
 import axios from 'axios';
 
 interface StepType {
@@ -211,7 +213,7 @@ const Ebec = () => {
                     </div>
                     <div className={styles.judgeInformation}>
                       <h2>Erdinç Altun</h2>
-                      <p>Environmental Engineering</p>
+                      <p>Industrial Sustainability Environment and Energy Manager at Ferrero</p>
                       <a href="https://www.linkedin.com/in/erdin%C3%A7-altun-9685054a">LinkedIn</a>
                     </div>
                   </div>
@@ -238,6 +240,16 @@ const Ebec = () => {
                     </div>
                   </div>
                   <Divider />
+                  <div className={styles.judgeCard}>
+                    <div className={styles.judgeCardImg}>
+                      <Image className={styles.judgeImg} src={sinemToktayImg} alt="sinem-toktay-image" />
+                    </div>
+                    <div className={styles.judgeInformation}>
+                      <h2>Sinem Toktay</h2>
+                      <p>Head of Innovation and Entrepreneurship Policies Unit at İzmir Development Agency</p>
+                      <a href="https://www.linkedin.com/in/sinem/">LinkedIn</a>
+                    </div>
+                  </div>
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6">
