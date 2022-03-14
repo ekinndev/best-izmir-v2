@@ -36,7 +36,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   <strong>Yarışma Tipi:</strong> ${req.body[3]?.CompetitionType}<br/>`;
 
   const msg = {
-    to: 'mmmkaraomeroglu@gmail.com',
+    to: process.env.EBEC_MAIL,
     from: 'contact@em3543.bestizmirege.org',
     subject: `EBEC Başvuru`,
     text: payload,
