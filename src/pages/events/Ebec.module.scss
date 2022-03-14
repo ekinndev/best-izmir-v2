@@ -93,3 +93,20 @@
 .prevEbecImg {
   object-fit: contain;
 }
+.coordinatorImg {
+  max-width: 30rem;
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  object-fit: scale-down;
+}
+
+.sponsors {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    margin: 5rem;
+  }
+}

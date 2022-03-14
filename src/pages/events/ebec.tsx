@@ -27,6 +27,7 @@ import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
 import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
+import aemTextileImg from '../../assets/ebec/aem-textile_logo.svg';
 import erdincAltunImg from '../../assets/ebec/erdinc-altun-img.jpg';
 import nuriAzbarImg from '../../assets/ebec/nuri-azbar-img.jpg';
 import ilkerErolImg from '../../assets/ebec/ilker-erol-img.jpg';
@@ -253,8 +254,13 @@ const Ebec = () => {
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6">
-                <div>
-                  <Image src={karsiyakaKollektif} alt="karsiyaka-kollektif-img" />
+                <div className={styles.sponsors}>
+                  <div>
+                    <Image src={karsiyakaKollektif} alt="karsiyaka-kollektif-img" />
+                  </div>
+                  <div>
+                    <Image src={aemTextileImg} alt="aem-textile-img" />
+                  </div>
                 </div>
               </TabPane>
             </Tabs>
