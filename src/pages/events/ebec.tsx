@@ -5,33 +5,24 @@ import ebecLogo from '../../assets/logos/ebec.svg';
 import styles from '../events/Ebec.module.scss';
 import Image from 'next/image';
 import { AiOutlineDownload } from 'react-icons/ai';
-import {
-  Layout as ALayout,
-  Tabs,
-  Button,
-  Collapse,
-  Card,
-  Form,
-  Steps,
-  message,
-  Carousel,
-  Divider,
-  Row,
-  Col,
-  Image as AntImage,
-} from 'antd';
+import { Layout as ALayout, Tabs, Button, Collapse, Form, Steps, message, Carousel, Divider, Row, Col } from 'antd';
 import { useTranslation } from 'next-i18next';
 import EBEC_FAQ from '../../constants/Ebecfaq';
 import ApplyForm from '../../components/Ebec/EbecForm';
 import EbecPyrmaidImage from '../../assets/ebec/ebecPyramid.png';
 import innDesImg from '../../assets/ebec/innovativeDesign.jpg';
 import caseStdyImg from '../../assets/ebec/caseStudy.jpg';
-import karsiyakaKollektif from '../../assets/ebec/karsiyaka_kolektif.jpg';
-import aemTextileImg from '../../assets/ebec/aem-textile_logo.svg';
 import erdincAltunImg from '../../assets/ebec/erdinc-altun-img.jpg';
 import nuriAzbarImg from '../../assets/ebec/nuri-azbar-img.jpg';
 import ilkerErolImg from '../../assets/ebec/ilker-erol-img.jpg';
 import sinemToktayImg from '../../assets/ebec/sinem-toktay-img.jpg';
+import mertImg from '../../assets/ebec/mert-img.jpg';
+import yektaImg from '../../assets/ebec/yekta-img.jpg';
+import kubraImg from '../../assets/ebec/kubra-img.jpg';
+import dogaImg from '../../assets/ebec/doga-img.jpg';
+import utkuImg from '../../assets/ebec/utku-img.jpg';
+import baranImg from '../../assets/ebec/baran-img.jpg';
+import mehmetImg from '../../assets/ebec/mehmet-akif-img.jpg';
 
 import axios from 'axios';
 
@@ -254,6 +245,57 @@ const Ebec = () => {
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6"></TabPane>
+              <TabPane className={styles.tabContent} tab="Takımımız" key="7">
+                <div className={styles.coordinatorImg}>
+                  <Image src={mertImg} alt="mert-img" />
+                  <h2>Ana Organizatör</h2>
+                  <h3>Mert Karaömeroğlu</h3>
+                </div>
+                <Divider />
+                <div className={styles.coordinatorImg}>
+                  <Image src={yektaImg} alt="yekta-img" />
+                  <h2>IT Koordinatörü</h2>
+                  <h3>Yekta Yüksel</h3>
+                </div>
+                <Divider />
+
+                <div className={styles.coordinatorImg}>
+                  <Image src={dogaImg} alt="yekta-img" />
+                  <h2>Sekreter</h2>
+                  <h3>Doğa Tapan</h3>
+                </div>
+                <Divider />
+                <div className={styles.coordinatorImg}>
+                  <Image src={kubraImg} alt="yekta-img" />
+                  <h2>Topic Koordinatörü</h2>
+                  <h3>Kübra Korkmaz</h3>
+                </div>
+                <Divider />
+
+                <div className={styles.coordinatorImg}>
+                  <div>
+                    <Image objectFit="scale-down" src={utkuImg} alt="utku-img" />
+                  </div>
+                  <h2>FR Koordinatörü</h2>
+                  <h3>Utku Akdoğan</h3>
+                </div>
+                <Divider />
+
+                <div className={styles.coordinatorImg}>
+                  <Image src={baranImg} alt="baran-img" />
+                  <h2>PR Koordinatörü</h2>
+                  <h3>Osman Baran Özdemir</h3>
+                </div>
+                <Divider />
+                <div className={styles.coordinatorImg}>
+                  <Image src={mehmetImg} alt="mehmet-img" />
+                  <div>
+                    <h2>Lojistik Koordinatörü</h2>
+                    <h3>Mehmet Akif Çelebi</h3>
+                  </div>
+                </div>
+                <Divider />
+              </TabPane>
             </Tabs>
           </Col>
         </Row>
