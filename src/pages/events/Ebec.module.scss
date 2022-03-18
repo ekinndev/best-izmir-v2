@@ -95,11 +95,37 @@
 }
 .coordinatorImg {
   max-width: 30rem;
-
+  width: fit-content;
   display: flex;
   flex-direction: column;
   text-align: center;
   object-fit: scale-down;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2%;
+  div {
+    margin-top: 1rem;
+  }
+  h2,
+  h3 {
+    color: black;
+  }
+  box-shadow: 0rem 0rem 1rem;
+}
+
+.teamImages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.teamMemberImg {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0.5rem auto 0.5rem;
+  max-width: 15rem;
+  max-height: 15rem;
+  object-fit: unset;
+  align-items: center;
 }
 
 .sponsors {
