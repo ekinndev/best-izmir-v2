@@ -26,6 +26,8 @@
   "applyButtonText": "Apply!",
   "nextStepButtonText": "Next Step",
   "previousStepButtonText": "Previous Step",
+  "nameOfTheTeamText": "Name Of The Team:",
+  "leaderOfTheTeamText": "Leader Of The Team",
   "formName": "Name:",
   "formSurname": "Surname:",
   "formStudentId": "Student Number:",

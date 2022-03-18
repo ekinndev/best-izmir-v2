@@ -26,6 +26,8 @@
   "applyButtonText": "Başvur!",
   "nextStepButtonText": "Sonraki Adım",
   "previousStepButtonText": "Önceki Adım",
+  "nameOfTheTeamText": "Takım Adı:",
+  "leaderOfTheTeamText": "Takım Lideri:",
   "formName": "İsim:",
   "formSurname": "Soy İsim:",
   "formStudentId": "Öğrenci Numarası:",
