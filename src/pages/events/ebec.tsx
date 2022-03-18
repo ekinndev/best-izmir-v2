@@ -259,7 +259,7 @@ const Ebec = () => {
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('collaborationText')} key="6"></TabPane>
-              <TabPane className={styles.tabContent} tab="Takımımız" key="7">
+              <TabPane className={styles.tabContent} tab={t('ourTeamText')} key="7">
                 <div className={styles.coordinatorImg}>
                   <Image src={mertImg} alt="mert-img" />
                   <h2>Ana Organizatör</h2>
