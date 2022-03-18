@@ -23,6 +23,7 @@ import dogaImg from '../../assets/ebec/doga-img.jpg';
 import utkuImg from '../../assets/ebec/utku-img.jpg';
 import baranImg from '../../assets/ebec/baran-img.jpg';
 import mehmetImg from '../../assets/ebec/mehmet-akif-img.jpg';
+import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 import axios from 'axios';
 
@@ -139,16 +140,29 @@ const Ebec = () => {
                       </div>
                     </div>
                   </Carousel>
+                </div>
 
-                  <Button
-                    style={{ marginTop: '1rem' }}
-                    block
-                    href="/booklet.pdf"
-                    type="primary"
-                    icon={<AiOutlineDownload />}
-                  >
-                    {t('downlaodBookletText')}
-                  </Button>
+                <div className={styles.socialMedia}>
+                  <Divider />
+                  <h2>{t('followUsText')}</h2>
+                  <Divider />
+                  <div>
+                    <div>
+                      <a href="https://twitter.com/ebecizmir" target="_blank" rel="noopener noreferrer">
+                        <FiTwitter size="2rem" />
+                      </a>
+                    </div>
+                    <div>
+                      <a href="https://www.instagram.com/ebecizmir/" target="_blank" rel="noopener noreferrer">
+                        <FiInstagram size="2rem" />
+                      </a>
+                    </div>
+                    <div>
+                      <a href="https://www.facebook.com/ebecizmir/" target="_blank" rel="noopener noreferrer">
+                        <FiFacebook size="2rem" />
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('howToApplyTitle')} key="2">
@@ -295,6 +309,17 @@ const Ebec = () => {
                   </div>
                 </div>
                 <Divider />
+              </TabPane>
+              <TabPane className={styles.tabContent} tab={t('downlaodBookletText')} key="8">
+                <Button
+                  style={{ marginTop: '1rem' }}
+                  block
+                  href="/booklet.pdf"
+                  type="primary"
+                  icon={<AiOutlineDownload />}
+                >
+                  {t('downlaodBookletText')}
+                </Button>
               </TabPane>
             </Tabs>
           </Col>

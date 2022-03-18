@@ -136,3 +136,14 @@
     margin: 5rem;
   }
 }
+.socialMedia {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+  div {
+    align-items: center;
+    display: flex;
+    margin: 1rem;
+  }
+}
