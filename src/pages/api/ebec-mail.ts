@@ -33,7 +33,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   <strong>Email:</strong> ${req.body?.[3]?.Email}<br/>
   <strong>Telefonu:</strong> ${req.body?.[3]?.PhoneNumber}<br/>
   <strong>Bölüm:</strong> ${req.body?.[3]?.Faculty} ${req.body?.[3]?.Major}<br/>
-  <strong>Yarışma Tipi:</strong> ${req.body[3]?.CompetitionType}<br/>`;
+  <strong>Yarışma Tipi:</strong> ${req.body[3]?.CompetitionType}<br/>
+  <strong>Takım Lideri:</strong> ${req.body[3]?.TakimLideri}<br/><hr>
+  <strong>Takım Adı:</strong> ${req.body[3]?.TakimAdi}<br/>`;
 
   const msg = {
     to: process.env.EBEC_MAIL,
