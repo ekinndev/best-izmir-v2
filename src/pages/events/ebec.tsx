@@ -64,9 +64,9 @@ const Ebec = () => {
   const next = () => {
     setCurrent(current + 1);
   };
-  const prev = () => {
-    setCurrent(current - 1);
-  };
+  // const prev = () => {
+  //   setCurrent(current - 1);
+  // };
 
   const [form] = Form.useForm();
 
@@ -193,11 +193,11 @@ const Ebec = () => {
                         </Button>
                       </span>
                     )}
-                    {current > 0 && (
+                    {/* {current > 0 && (
                       <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
                         {t('previousStepButtonText')}
                       </Button>
-                    )}
+                    )} */}
                   </div>
                 </Form>
               </TabPane>
