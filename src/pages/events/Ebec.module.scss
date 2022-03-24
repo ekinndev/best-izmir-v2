@@ -118,15 +118,6 @@
   align-items: center;
   justify-content: center;
 }
-.teamMemberImg {
-  display: flex;
-  flex-direction: column;
-  margin: auto 0.5rem auto 0.5rem;
-  max-width: 15rem;
-  max-height: 15rem;
-  object-fit: unset;
-  align-items: center;
-}
 
 .sponsors {
   display: flex;
@@ -146,4 +137,18 @@
     display: flex;
     margin: 1rem;
   }
+}
+
+.schedule {
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0rem 0rem 1rem black;
+  margin: 2rem;
+  color: black;
+  h3,
+  h4 {
+    color: black;
+  }
+  border-radius: 1%;
+  text-align: center;
 }
