@@ -23,7 +23,6 @@ import dogaImg from '../../assets/ebec/doga-img.jpg';
 import utkuImg from '../../assets/ebec/utku-img.jpg';
 import baranImg from '../../assets/ebec/baran-img.jpg';
 import mehmetImg from '../../assets/ebec/mehmet-akif-img.jpg';
-import scheduleImg from '../../assets/ebec/scheduleImg.png';
 import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 import axios from 'axios';
@@ -323,7 +322,97 @@ const Ebec = () => {
                 </Button>
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('scheduleText')} key="9">
-                <Image src={scheduleImg} alt="mehmet-img" />
+                <div className={styles.schedule}>
+                  <Row gutter={32}>
+                    <Col span={8}></Col>
+                    <Col span={8}>
+                      <h3>{t('april2nd')}</h3>
+                    </Col>
+                    <Col span={8}>
+                      <h3>{t('april3rd')}</h3>
+                    </Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>9.00-9.30</h4>
+                    </Col>
+                    <Col span={8}>{t('arrivalBreakfastText')}</Col>
+                    <Col span={8}>{t('arrivalBreakfastText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>9.30-10.00</h4>
+                    </Col>
+                    <Col span={8}>{t('ebecPresentationText')}</Col>
+                    <Col span={8}>{t('ebecPresentationText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>10.00-10.30</h4>
+                    </Col>
+                    <Col span={8}>{t('speakerText')}</Col>
+                    <Col span={8}>{t('speakerText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>10.30-12.30</h4>
+                    </Col>
+                    <Col span={8}>{t('innovativeDesignTitle')}</Col>
+                    <Col span={8}>{t('caseStudyTitle')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>12.30-12.45</h4>
+                    </Col>
+                    <Col span={8}>{t('coffeeBreakText')}</Col>
+                    <Col span={8}>{t('coffeeBreakText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>12.45-14.45</h4>
+                    </Col>
+                    <Col span={8}>{t('innovativeDesignTitle')}</Col>
+                    <Col span={8}>{t('caseStudyTitle')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>14.45-15.45</h4>
+                    </Col>
+                    <Col span={8}>{t('lunchBreakText')}</Col>
+                    <Col span={8}>{t('lunchBreakText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>15.45-16.45</h4>
+                    </Col>
+                    <Col span={8}>{t('innovativeDesignTitle')}</Col>
+                    <Col span={8}>{t('caseStudyTitle')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>16.45-17.00</h4>
+                    </Col>
+                    <Col span={8}>{t('coffeeBreakText')}</Col>
+                    <Col span={8}>{t('coffeeBreakText')}</Col>
+                  </Row>
+                  <hr />
+                  <Row gutter={32}>
+                    <Col span={8}>
+                      <h4>17.00-19.00</h4>
+                    </Col>
+                    <Col span={8}>{t('presentationAndEvaluation')}</Col>
+                    <Col span={8}>{t('presentationAndEvaluation')}</Col>
+                  </Row>
+                </div>
               </TabPane>
             </Tabs>
           </Col>
