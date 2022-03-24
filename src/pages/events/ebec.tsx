@@ -23,6 +23,7 @@ import dogaImg from '../../assets/ebec/doga-img.jpg';
 import utkuImg from '../../assets/ebec/utku-img.jpg';
 import baranImg from '../../assets/ebec/baran-img.jpg';
 import mehmetImg from '../../assets/ebec/mehmet-akif-img.jpg';
+import scheduleImg from '../../assets/ebec/scheduleImg.png';
 import { FiFacebook, FiInstagram, FiTwitter } from 'react-icons/fi';
 
 import axios from 'axios';
@@ -320,6 +321,9 @@ const Ebec = () => {
                 >
                   {t('downlaodBookletText')}
                 </Button>
+              </TabPane>
+              <TabPane className={styles.tabContent} tab={t('scheduleText')} key="9">
+                <Image src={scheduleImg} alt="mehmet-img" />
               </TabPane>
             </Tabs>
           </Col>
