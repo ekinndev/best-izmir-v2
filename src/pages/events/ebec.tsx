@@ -218,7 +218,7 @@ const Ebec = () => {
                       <Image className={styles.judgeImg} src={erdincAltunImg} alt="erdinc-altun-image" />
                     </div>
                     <div className={styles.judgeInformation}>
-                      <h2>Erdinç Altun</h2>
+                      <h2>{t('erdincAltunText')}</h2>
                       <p>Industrial Sustainability Environment and Energy Manager at Ferrero</p>
                       <a href="https://www.linkedin.com/in/erdin%C3%A7-altun-9685054a">LinkedIn</a>
                     </div>
@@ -240,7 +240,7 @@ const Ebec = () => {
                       <Image className={styles.judgeImg} src={ilkerErolImg} alt="ilker-erol-image" />
                     </div>
                     <div className={styles.judgeInformation}>
-                      <h2>İlker Erol</h2>
+                      <h2>{t('ilkerErolText')}</h2>
                       <p>Environmental Engineering</p>
                       <a href="https://www.linkedin.com/in/erol-ilker-8938a137/">LinkedIn</a>
                     </div>
@@ -262,27 +262,27 @@ const Ebec = () => {
               <TabPane className={styles.tabContent} tab={t('ourTeamText')} key="7">
                 <div className={styles.coordinatorImg}>
                   <Image src={mertImg} alt="mert-img" />
-                  <h2>Ana Organizatör</h2>
-                  <h3>Mert Karaömeroğlu</h3>
+                  <h2>{t('mainOrganizerText')}</h2>
+                  <h3>{t('mertNameText')}</h3>
                 </div>
                 <Divider />
                 <div className={styles.coordinatorImg}>
                   <Image src={yektaImg} alt="yekta-img" />
-                  <h2>IT Koordinatörü</h2>
-                  <h3>Yekta Yüksel</h3>
+                  <h2>{t('itCoordinatorText')}</h2>
+                  <h3>{t('yektaNameText')}</h3>
                 </div>
                 <Divider />
 
                 <div className={styles.coordinatorImg}>
                   <Image src={dogaImg} alt="yekta-img" />
-                  <h2>Sekreter</h2>
-                  <h3>Doğa Tapan</h3>
+                  <h2>{t('secretaryText')}</h2>
+                  <h3>{t('dogaNameText')}</h3>
                 </div>
                 <Divider />
                 <div className={styles.coordinatorImg}>
                   <Image src={kubraImg} alt="yekta-img" />
-                  <h2>Topic Koordinatörü</h2>
-                  <h3>Kübra Korkmaz</h3>
+                  <h2>{t('topicCoordinatorText')}</h2>
+                  <h3>{t('kubraNameText')}</h3>
                 </div>
                 <Divider />
 
@@ -290,22 +290,22 @@ const Ebec = () => {
                   <div>
                     <Image objectFit="scale-down" src={utkuImg} alt="utku-img" />
                   </div>
-                  <h2>FR Koordinatörü</h2>
-                  <h3>Utku Akdoğan</h3>
+                  <h2>{t('frCoordinatorText')}</h2>
+                  <h3>{t('utkuNameText')}</h3>
                 </div>
                 <Divider />
 
                 <div className={styles.coordinatorImg}>
                   <Image src={baranImg} alt="baran-img" />
-                  <h2>PR Koordinatörü</h2>
-                  <h3>Osman Baran Özdemir</h3>
+                  <h2>{t('prCoordinatorText')}</h2>
+                  <h3>{t('baranNameText')}</h3>
                 </div>
                 <Divider />
                 <div className={styles.coordinatorImg}>
                   <Image src={mehmetImg} alt="mehmet-img" />
                   <div>
-                    <h2>Lojistik Koordinatörü</h2>
-                    <h3>Mehmet Akif Çelebi</h3>
+                    <h2>{t('logicstisCoordinatorText')}</h2>
+                    <h3>{t('akifNameText')}</h3>
                   </div>
                 </div>
                 <Divider />
