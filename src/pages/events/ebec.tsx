@@ -167,10 +167,16 @@ const Ebec = () => {
               </TabPane>
               <TabPane className={styles.tabContent} tab={t('howToApplyTitle')} key="2">
                 <Form layout="vertical" className={styles.applyForm} form={form}>
-                  <p className={styles.explanationText}>{t('howToApplyText')}</p>
+                  <div className={styles.howToApplyTextContainer}>
+                    <p className={styles.explanationText}>
+                      {t('singleCompetitorText')}{' '}
+                      <a href="https://forms.gle/P8pMWwhzZSRb2C3j8">{t('singleComptetitorHref')}</a>
+                    </p>
 
+                    <p className={styles.explanationText}>{t('howToApplyText')}</p>
+                  </div>
                   <div className={styles.formSteps}>
-                    <Steps current={current}>
+                    <Steps current={current} className={styles.steps}>
                       {steps.map(item => (
                         <Step key={item.title} title={item.title} />
                       ))}
