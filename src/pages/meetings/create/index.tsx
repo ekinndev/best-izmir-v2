@@ -110,6 +110,7 @@ const CreateMeeting = () => {
           key={meetingKey}
           value={meetingKey}
           size={210}
+          fgColor="#9900F0"
           imageSettings={{
             src: '/images/logo.webp',
             x: undefined,
