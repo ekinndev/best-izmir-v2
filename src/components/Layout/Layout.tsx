@@ -57,7 +57,8 @@ const Layout = ({ children }: LayoutProps) => {
   }, [router.events]);
 
   useEffect(() => {
-    setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    // TODO
+    setTheme(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'light');
   }, []);
 
   const pageInfo = staticPages.find(info => info.page === router.pathname);

@@ -11,16 +11,12 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link
+          {/* <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.3/antd.dark.min.css"
             media="screen and (prefers-color-scheme: dark)"
-          />
-          <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.3/antd.min.css"
-            media="screen and (prefers-color-scheme: light)"
-          />
+          /> */}
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.18.3/antd.min.css" />
           <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
           <link rel="icon" type="image/png" href="/favicon/favicon.png" />
         </Head>
