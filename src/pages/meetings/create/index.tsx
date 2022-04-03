@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getSession, useSession } from 'next-auth/client';
-import QrCode from 'qrcode.react';
+import { QRCodeSVG } from 'qrcode.react';
 import { Button, Input, Form, message, Table } from 'antd';
 import { useTranslation } from 'next-i18next';
 import firebase from 'firebase/app';
@@ -106,7 +106,8 @@ const CreateMeeting = () => {
   return !loggedInUser?.isAdmin ? null : (
     <div className={styles.meeting_create}>
       {showQr && meetingKey && (
-        <QrCode
+        <QRCodeSVG
+          key={meetingKey}
           value={meetingKey}
           size={210}
           imageSettings={{
