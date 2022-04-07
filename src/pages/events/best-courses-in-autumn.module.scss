@@ -1,0 +1,17 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageContainer {
+  padding: 2rem;
+}
+.tabContent {
+  max-width: 50rem;
+}
+.courseHeader {
+  text-align: center;
+  font-size: 2rem;
+}
