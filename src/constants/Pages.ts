@@ -36,7 +36,7 @@ const staticPages: staticPages[] = [
     descriptionKey: 'beinciPageDescription',
   },
   {
-    page: '/events/autumn-course',
+    page: '/events/best-courses-in-autumn',
     titleKey: 'autumnCoursePageTitle',
     descriptionKey: 'autumnCoursePageDescription',
   },

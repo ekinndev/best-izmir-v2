@@ -52,7 +52,7 @@ export const homePageEvents: homePageEventsType[] = [
   {
     titleKey: 'events.courseTitle',
     contentKey: 'events.courseContent',
-    link: '/events/autumn-course',
+    link: '/events/best-courses-in-autumn',
     imageLink: courseLogo,
   },
 ];

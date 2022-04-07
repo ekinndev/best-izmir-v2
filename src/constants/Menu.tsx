@@ -104,10 +104,10 @@ const MENU_CONSTANT: MenuItem[] = [
         icon: null,
       },
       {
-        id: '/autumn-course',
+        id: '/best-courses-in-autumn',
         languageKey: 'bestCourse',
         subMenu: false,
-        route: '/autumn-course',
+        route: '/best-courses-in-autumn',
         subMenuComponents: [],
 
         icon: null,
