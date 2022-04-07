@@ -1,0 +1,19 @@
+.scheduleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rowContainer {
+  width: 1000rem;
+  margin: 0;
+}
+.column {
+  border: 0.2px solid black;
+  text-align: center;
+  width: 8rem;
+  height: auto;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}

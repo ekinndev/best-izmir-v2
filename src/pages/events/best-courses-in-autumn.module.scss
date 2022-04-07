@@ -6,12 +6,27 @@
 }
 
 .imageContainer {
-  padding: 2rem;
 }
 .tabContent {
-  max-width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .courseHeader {
   text-align: center;
   font-size: 2rem;
+}
+.courseDescription {
+  max-width: 50rem;
+}
+.scheduleContainer {
+  max-width: 89rem;
+  border-radius: 1%;
+  box-shadow: 0rem 0rem 0.5rem black;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 12rem;
+  background-color: white;
 }
