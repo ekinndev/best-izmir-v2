@@ -7,6 +7,7 @@ import Image from 'next/image';
 import courseLogo from '../../assets/best-courses-in-autumn/BESTCoursesLogo.png';
 import { Row, Col, Tabs } from 'antd';
 import CourseSchedule from '../../components/BESTCourse/CourseSchedule';
+import SurvivalGuide from '../../components/BESTCourse/SurvivalGuide';
 const BestCourse = () => {
   const { t } = useTranslation('ac');
   const { TabPane } = Tabs;
@@ -39,12 +40,14 @@ const BestCourse = () => {
                   </div>
                 </div>
               </TabPane>
-              <TabPane tab="Schedule" key="2">
+              <TabPane className={styles.tabContent} tab="Schedule" key="2">
                 <div className={styles.scheduleContainer}>
                   <CourseSchedule />
                 </div>
               </TabPane>
-              <TabPane className={styles.tabContent} tab="Survival Guide" key="3"></TabPane>
+              <TabPane className={styles.tabContent} tab="Survival Guide" key="3">
+                <SurvivalGuide />
+              </TabPane>
               <TabPane className={styles.tabContent} tab="F.A.Q" key="4"></TabPane>
             </Tabs>
           </Col>

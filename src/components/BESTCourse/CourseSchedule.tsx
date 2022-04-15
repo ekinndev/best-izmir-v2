@@ -1,10 +1,19 @@
 import { useTranslation } from 'next-i18next';
 
-import { Row, Col } from 'antd';
+import { Row, Col, Button, Menu, Dropdown, message, Space, Tooltip } from 'antd';
+import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import ScheduleRow from './ScheduleRow';
 import styles from './courschedule.module.scss';
+import { SetStateAction, useState } from 'react';
 const CourseSchedule = () => {
   const { t } = useTranslation('ac');
+  const [day, setDay] = useState<number>(1);
+
+  const handleMenuClick = (e: { key: string }) => {
+    console.log(e);
+
+    setDay(+e.key);
+  };
 
   const row0 = [
     '',
@@ -20,6 +29,35 @@ const CourseSchedule = () => {
     '11.09.22 Sunday',
   ];
 
+  const menu = (
+    <Menu onClick={handleMenuClick}>
+      <Menu.Item key={1}>{row0[1]}</Menu.Item>
+      <Menu.Item key={2}>{row0[2]}</Menu.Item>
+      <Menu.Item key={3}>{row0[3]}</Menu.Item>
+      <Menu.Item key={4}>{row0[4]}</Menu.Item>
+      <Menu.Item key={5}>{row0[5]}</Menu.Item>
+      <Menu.Item key={6}>{row0[6]}</Menu.Item>
+      <Menu.Item key={7}>{row0[7]}</Menu.Item>
+      <Menu.Item key={8}>{row0[8]}</Menu.Item>
+      <Menu.Item key={9}>{row0[9]}</Menu.Item>
+      <Menu.Item key={10}>{row0[10]}</Menu.Item>
+    </Menu>
+  );
+  const handleDay = (handler: number) => {
+    if (handler === 1) {
+      if (day + 1 === 11) {
+        return setDay(1);
+      }
+      setDay(prevState => prevState + 1);
+      return;
+    } else if (handler === -1) {
+      if (day - 1 === 0) {
+        return setDay(10);
+      }
+
+      return setDay(prevState => prevState - 1);
+    }
+  };
   const row1 = [
     '8.00',
     'Arrival',
@@ -487,11 +525,26 @@ const CourseSchedule = () => {
     row32,
     row33,
   ];
+
   return (
-    <div className={styles.scheduleContainer}>
-      {rows.map(row => (
-        <ScheduleRow key={row[0]} events={row} />
-      ))}
+    <div>
+      <div className={styles.buttonContainer}>
+        <Button type="primary" block={false} onClick={() => handleDay(-1)}>
+          Prev
+        </Button>
+        <Dropdown overlay={menu}>
+          <Button>
+            Select A Date <DownOutlined />
+          </Button>
+        </Dropdown>
+        <Button type="primary" block={false} onClick={() => handleDay(1)}>
+          Next
+        </Button>
+      </div>
+
+      <div>
+        <ScheduleRow events={rows} day={day} />
+      </div>
     </div>
   );
 };
