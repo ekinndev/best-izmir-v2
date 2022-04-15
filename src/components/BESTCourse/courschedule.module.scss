@@ -1,19 +1,87 @@
-.scheduleContainer {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 50rem;
+  h1 {
+    font-size: 2rem;
+  }
 }
+.introductionText {
+  p {
+    padding-right: 1rem;
+  }
+}
+
 .rowContainer {
   width: 1000rem;
   margin: 0;
 }
 .column {
-  border: 0.2px solid black;
+  border: 1px solid black;
+  min-width: 5rem;
   text-align: center;
-  width: 8rem;
-  height: auto;
-  min-height: 3rem;
-  align-items: center;
-  justify-content: center;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  Button {
+    margin: 1rem;
+  }
+}
+.aboutTurkeyText {
+  ul {
+    padding: 0rem;
+    list-style: none;
+  }
+}
+.boundaries {
+  ul {
+    padding-left: 2rem;
+    list-style: circle;
+  }
+}
+.howToReachIzmir {
+  h3 {
+    text-align: center;
+  }
+  li {
+    margin: 1.5rem 1.5rem;
+  }
+}
+.minimizedDict {
+  a {
+    color: #177ddc;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #4092df;
+  }
+}
+.saatKulesi {
+  margin-right: 1rem;
+}
+.turkishFlag {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 4rem;
+  div {
+    max-width: 20rem;
+  }
+}
+.howToReachIzmir {
+  a {
+    color: #177ddc;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #4092df;
+  }
+}
+.aboutIzmir {
+  margin: 1rem;
 }
