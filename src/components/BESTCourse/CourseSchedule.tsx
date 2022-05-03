@@ -529,7 +529,7 @@ const CourseSchedule = () => {
   return (
     <div>
       <div className={styles.buttonContainer}>
-        <Button type="primary" block={false} onClick={() => handleDay(-1)}>
+        <Button className={styles.button} type="primary" block={false} onClick={() => handleDay(-1)}>
           Prev
         </Button>
         <Dropdown overlay={menu}>
@@ -537,7 +537,7 @@ const CourseSchedule = () => {
             Select A Date <DownOutlined />
           </Button>
         </Dropdown>
-        <Button type="primary" block={false} onClick={() => handleDay(1)}>
+        <Button className={styles.button} type="primary" block={false} onClick={() => handleDay(1)}>
           Next
         </Button>
       </div>
