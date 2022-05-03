@@ -17,3 +17,75 @@
 .courseDescription {
   max-width: 50rem;
 }
+.courseDescriptionText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.applyImage {
+  max-width: 20rem;
+  margin: 1rem;
+}
+.applyButton {
+  background-color: #ff4800;
+  border-style: hidden;
+}
+
+.applyButton:hover {
+  background-color: #fe9268;
+}
+
+.deadlineImage {
+  margin: 1rem;
+  max-width: 10rem;
+}
+.faqPanel {
+  max-width: 440px;
+}
+.teamImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.memberImg {
+  max-width: 30rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  object-fit: scale-down;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2%;
+  margin: 2rem;
+  div {
+    margin-top: 1rem;
+  }
+  h2,
+  h3 {
+    color: black;
+  }
+}
+.multiMember {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2%;
+  object-fit: scale-down;
+  text-align: center;
+}
+.multiMemberImg {
+  max-width: 20rem;
+
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  padding: 2rem;
+}

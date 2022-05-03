@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   max-width: 50rem;
+
   h1 {
     font-size: 2rem;
   }
@@ -84,4 +85,49 @@
 }
 .aboutIzmir {
   margin: 1rem;
+}
+.survGuideButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background-color: #ff4800;
+  border-style: hidden;
+}
+
+.button:hover {
+  background-color: #fe9268;
+}
+
+.dictCell {
+  border: 1px solid black;
+  min-width: 11.2rem;
+  text-align: center;
+}
+.teamImgContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.memberImg {
+  max-width: 30rem;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  object-fit: scale-down;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2%;
+  div {
+    margin-top: 1rem;
+  }
+  h2,
+  h3 {
+    color: black;
+  }
 }
