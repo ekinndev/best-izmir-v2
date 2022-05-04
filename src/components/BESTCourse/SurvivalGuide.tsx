@@ -3,11 +3,6 @@ import styles from './courschedule.module.scss';
 import { Row, Col, Divider, Affix, Button, Menu, Dropdown } from 'antd';
 import Image from 'next/image';
 import saatKulesiImg from '../../assets/best-courses-in-autumn/izmir-saat-kulesi-img.webp';
-import turkishFlag from '../../assets/best-courses-in-autumn/turkey-falg.webp';
-import boyozImg from '../../assets/best-courses-in-autumn/boyoz.webp';
-import asansorImg from '../../assets/best-courses-in-autumn/asansor.jpg';
-import ephesusImg from '../../assets/best-courses-in-autumn/ephesus.jpg';
-import kemeraltiImg from '../../assets/best-courses-in-autumn/kemeraltı.webp';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { DownOutlined } from '@ant-design/icons';
 
@@ -28,15 +23,9 @@ const SurvivalGuide = () => {
       <Menu.Item>
         <a href="#howToReach">How To Reach Izmir</a>
       </Menu.Item>
-      <Menu.Item>
-        <a href="#sighseeing">Sightseeing in Izmir</a>
-      </Menu.Item>
-      <Menu.Item>
-        <a href="#necInfo">Neccesary Information</a>
-      </Menu.Item>
 
       <Menu.Item>
-        <a href="#dict">Turkish Language and Minimized Dictionary</a>
+        <a href="#dict">Learn Some Vocabulary!</a>
       </Menu.Item>
       <Menu.Item>
         <a href="#necPhone">Emergency and Other Phone Numbers</a>
@@ -686,75 +675,6 @@ const SurvivalGuide = () => {
                     <strong>Lunch: </strong>€3 - 7 - 40-100₺
                   </li>
                 </ul>
-              </Col>
-            </Row>
-          </div>
-          <Divider />
-          <div id="necInfo">
-            <h2>NECCESARY INFORMATION</h2>
-            <Row>
-              <Col md={24} lg={12}>
-                <p>
-                  <strong>Visa:</strong>
-                </p>
-                <p>
-                  <strong>Nations that do not require visa:</strong>
-                </p>
-                <p>
-                  <strong>Type of Passport: </strong> Ordinary Passport
-                </p>
-                <p>Period of Visa Exemption: 3 Months</p>
-                <p>
-                  Denmark, Finland, France, Germany, Greece, Iceland, Israel, Liechtenstein, Luxembourg, Monaco, St.
-                  Marino, Sweden, Switzerland, Turkish Republic of Northern Cyprus, Vatican Period of Visa Exemption: 2
-                  Months; Bosnia- Herzegovina, Croatia, Macedonia, Romania
-                </p>
-                <p>
-                  <strong>Type of Passport: </strong>Official Passports
-                </p>
-                <p>
-                  <strong>Period of Visa Exemption : 3 Months</strong>
-                </p>
-                <p>
-                  Albania, Austria, Azerbaijan, Belgium, Belarus, Czech Republic, Denmark, Finland, France, Georgia,
-                  Germany, Greece, Holland, Iceland, Israel, Italy, Liechtenstein, Lithuania, Luxembourg, Malta, Monaco,
-                  Norway, Poland, Portugal (only diplomatic passports), Russia (only diplomatic passports), Slovakia,
-                  Slovenia, Spain, Sweden, Switzerland, Turkish Republic of Northern Cyprus, Ukraine, Vatican
-                </p>
-              </Col>
-              <Col md={24} lg={12}>
-                <p>
-                  <strong>Period of Visa Exemption: 2 Months</strong>{' '}
-                </p>
-                <p>Bosnia Herzegovina, Croatia, Macedonia, Romania</p>
-                <p>Period of Visa Exemption: 1 Month</p>
-                <p>
-                  Bulgaria (only diplomatic passports), Estonia (only diplomatic passports), Hungary, Latvia (only
-                  diplomatic passports), Moldova Ordinary passport holders of nationals of the following countries may
-                  obtain sticker type visas at the Turkish international border gates to enter into Turkey
-                </p>
-                <p>
-                  <strong>Type of Passport:</strong> Ordinary Passport
-                </p>
-                <p>
-                  <strong>Duration of Stay: 3 Months</strong>
-                </p>
-                <p>Austria, Belgium, Holland, Ireland, Italy, Malta, Portugal, Spain, United Kingdom</p>
-                <p>
-                  <strong>Duration of Stay: 2 Months </strong>
-                </p>
-                <p>Albania, Belarus, Russia, Ukraine</p>
-                <p>
-                  <strong>Duration of Stay: 1 Month</strong>
-                </p>
-                <p>
-                  Azerbaijan, Armenia, Estonia, Greek Cypriot Administration, Hungary, Latvia, Lithuania, Moldova,
-                  Norway, Poland, Serbia and Montenegro, Slovakia
-                </p>
-                <p>
-                  <strong>Duration of Stay: 15 Days</strong>
-                </p>
-                <p>Georgia</p>
               </Col>
             </Row>
           </div>
