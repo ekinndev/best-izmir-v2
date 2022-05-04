@@ -52,6 +52,17 @@ const BestCourse = () => {
                       <p>{t('courseDescription8')}</p>
                       <p>{t('courseDescription9')}</p>
                     </div>
+                    <div className={styles.video}>
+                      <iframe
+                        width="1118"
+                        height="629"
+                        src="https://www.youtube.com/embed/0RneX_V4zm8"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
                     <div className={styles.applyImage}>
                       <Image src={applyText} alt="apply-text" />
                     </div>
@@ -78,7 +89,7 @@ const BestCourse = () => {
                 <Collapse defaultActiveKey={['1']}>
                   <Panel className={styles.faqPanel} header="What is BEST Course?" key="1">
                     <p>
-                      TThroughout the four seasons of a year BEST organises courses where students of technology from
+                      Throughout the four seasons of a year BEST organises courses where students of technology from
                       member universities get the chance to complement their fields of study, discuss educational
                       matters, learn and take their first steps into an international career, increase their
                       international experience, set up contacts, improve their English level and have fun. Each BEST
@@ -118,7 +129,7 @@ const BestCourse = () => {
                       female participants.
                     </p>
                   </Panel>
-                  <Panel className={styles.faqPanel} header="Being on the „Waiting List” - what does it mean?" key="5">
+                  <Panel className={styles.faqPanel} header='Being on the "Waiting List" - what does it mean?' key="5">
                     <p>
                       It means you still have a chance of going to the course you applied to. That can happen if someone
                       who has been qualified resigns.
@@ -146,14 +157,7 @@ const BestCourse = () => {
                   >
                     <p>The fee is 45 Euro.</p>
                   </Panel>
-                  <Panel
-                    className={styles.faqPanel}
-                    header="How many students take part in a BEST course?
-"
-                    key="9"
-                  >
-                    <p>It’s usually about 22 people from different countries all over Europe.</p>
-                  </Panel>
+
                   <Panel
                     className={styles.faqPanel}
                     header="Do you have any concept for your course?
@@ -205,14 +209,14 @@ const BestCourse = () => {
                   </div>
 
                   <div className={styles.multiMember}>
-                    <Row>
-                      <Col md={24} lg={12}>
+                    <Row gutter={32}>
+                      <Col>
                         <div className={styles.multiMemberImg}>
                           <Image src={neslihanImg} alt="neslihan-img" />
                           <h2>Neslihan Onal</h2>
                         </div>
                       </Col>
-                      <Col md={24} lg={12}>
+                      <Col>
                         <div className={styles.multiMemberImg}>
                           <Image src={iremImg} alt="irem-img" />
                           <h2>Irem Yilmaz</h2>
@@ -220,7 +224,7 @@ const BestCourse = () => {
                       </Col>
                     </Row>
 
-                    <h3>Pax Responisbles</h3>
+                    <h3>Pax Responsibles</h3>
                   </div>
 
                   <div className={styles.memberImg}>
@@ -230,7 +234,7 @@ const BestCourse = () => {
                   </div>
 
                   <div className={styles.multiMember}>
-                    <Row>
+                    <Row gutter={32}>
                       <Col md={24} lg={12}>
                         <div className={styles.multiMemberImg}>
                           <Image src={dogaImg} alt="doga-img" />
@@ -250,7 +254,7 @@ const BestCourse = () => {
                   <div className={styles.memberImg}>
                     <Image src={efekanImg} alt="efekan-img" />
                     <h2>Efekan Yeter</h2>
-                    <h3>Activity Resposible</h3>
+                    <h3>Activity Responsible</h3>
                   </div>
                 </div>
               </TabPane>
