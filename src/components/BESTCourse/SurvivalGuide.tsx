@@ -84,17 +84,18 @@ const SurvivalGuide = () => {
                   <strong>Dates: </strong>2nd to 11th September
                 </p>
                 <p>
-                  <strong>Accommodation: </strong>2nd to 11th SeptemberYou will be hosted at the dorms of the Ege
-                  University in the campus or organiser houses.
+                  <strong>Accommodation: </strong>You will be hosted at the dorms of the Ege University in the campus or
+                  organiser’s houses or hostel.
                 </p>
                 <p>
-                  <strong>Meals:</strong> The meals will be cooked and served by your helpful organisers. If you have
-                  dietary restriction, don’t worry. We will take that into account.{' '}
+                  <strong>Meals:</strong> You will be hosted at the dorms of the Ege University in the campus or
+                  organiser’s houses or hostel.
                 </p>
                 <p>
                   <strong>Travel and Visa:</strong> You must tell us about your trip details as soon as possible, so we
                   can help you in case of any delays or other types of issues. Additionally, if you require a visa to
-                  get to Turkey, let us know as soon as possible so we can send you an official invitation.
+                  get to Turkey, let us know as soon as possible, so we can send you an official invitation letter which
+                  you can use in your visa application.
                 </p>
               </Col>
             </Row>
@@ -377,12 +378,17 @@ const SurvivalGuide = () => {
               in case, you can find some useful phrases and words below.
             </p>
             <Row>
-              <Col className={styles.dictCell} md={12} lg={6}>
-                <h3>English</h3>
-              </Col>
-              <Col className={styles.dictCell} md={12} lg={6}>
-                <h3>Turkish</h3>
-              </Col>
+              {window.innerWidth > 768 && (
+                <>
+                  <Col className={`${styles.dictCell} cellToHide`} md={12} lg={6}>
+                    <h3>English</h3>
+                  </Col>
+                  <Col className={`${styles.dictCell} cellToHide`} md={12} lg={6}>
+                    <h3>Turkish</h3>
+                  </Col>
+                </>
+              )}
+
               <Col className={styles.dictCell} md={12} lg={6}>
                 <h3>English</h3>
               </Col>
